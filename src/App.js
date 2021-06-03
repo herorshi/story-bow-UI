@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import CoveragePage from "./component/page/CoveragePage";
+import pageDetail from "./pageDetail";
+import Board from "./component/Board";
+import CoverageBoard from "./component/CoverageBoard";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="Cardheader"> </div>
+      <div className="container">
+        <Switch>
+          {/* CoveragePage */}
+          <Route exact path="/">
+            <CoveragePage data={pageDetail.Coverage}>
+              <Board>
+                <CoverageBoard />
+              </Board>
+            </CoveragePage>
+          </Route>
+          {/* Page */}
+          <Route exact path="/Page">
+            <CoveragePage data={pageDetail.Coverage}>
+              <Board>
+                <CoverageBoard />
+              </Board>
+            </CoveragePage>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
