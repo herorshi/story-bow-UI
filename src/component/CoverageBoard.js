@@ -49,6 +49,7 @@ export default function CoverageBoard(props) {
               <ModalToPage
                 title="Use Premise Tool"
                 description="ต้องการที่จะใช้ Premise Tool หรือไม่"
+                to="PremiseTool"
               ></ModalToPage>
             </ModalPaper>
           }

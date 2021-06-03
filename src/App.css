@@ -33,3 +33,7 @@ h1 {
 .cardtext {
   padding-left: 2em;
 }
+.flexend {
+  display: flex;
+  justify-content: flex-end;
+}
