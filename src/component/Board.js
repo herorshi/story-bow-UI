@@ -5,6 +5,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     marginTop: "3em",
     backgroundColor: "#f5f5f5",
+    height: "100%",
   },
 }));
 
