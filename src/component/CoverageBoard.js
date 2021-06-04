@@ -32,7 +32,6 @@ export default function CoverageBoard(props) {
   const CheckBoxKey = ["Choice1", "Choice2", "Choice3"];
 
   const toggleCheckBox = (Choice) => {
-    console.log("Choice", Choice);
     setCheckBoxChoice((prev) => ({ ...prev, [Choice]: !prev[Choice] }));
   };
 
@@ -47,6 +46,11 @@ export default function CoverageBoard(props) {
   const handleModalCheckBox = () => {
     setModalChoice("CheckBox");
     handleOpen();
+  };
+
+  const GenerateCheckBoxDetail = (obj) => {
+    let keys = Object.keys(obj);
+    return keys.filter((c) => obj[c]).join();
   };
 
   const handlePremiseTool = () => {
@@ -65,6 +69,7 @@ export default function CoverageBoard(props) {
   const handleClose = () => {
     setOpen(false);
   };
+
   // function ที่เปิด modal โดยที่ก่อนเปิดทำการสร้าง modal นั้นทันที
   // วิธีการใช้งาน ส่ง function ที่สร้าง modal พร้อมเปิด modal ให้ในปุ่ม edit ของสมาชิกแต่ละ coverage โดยเฉพาะ
   // โดยทำข้างใน modal จะเปลี่ยน title เนื้อหา และ function เมื่อกดปุ่ม confirm และ handleclose เมื่อกดปุ่ม cancle
@@ -102,7 +107,7 @@ export default function CoverageBoard(props) {
             <ModalCheckBox
               InputTitle={pageDetail.CheckBoxModal}
               Choice={CheckBoxChoice}
-              toggleCheckBox={toggleCheckBox}
+              setCheckBoxChoice={setCheckBoxChoice}
               handleClose={handleClose}
               CheckBoxKey={CheckBoxKey}
             ></ModalCheckBox>
@@ -172,7 +177,7 @@ export default function CoverageBoard(props) {
       <Grid item xs={6} sm={4}>
         <PaperCard
           title="Check Box"
-          detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in"
+          detail={GenerateCheckBoxDetail(CheckBoxChoice)}
           detailclname="primary"
           height="10em"
           width="100%"

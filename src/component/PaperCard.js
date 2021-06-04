@@ -2,7 +2,7 @@ import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import { FaTwitter } from "react-icons/fa";
-export default function Board(props) {
+export default function PaperCard(props) {
   const useStyles = makeStyles((theme) => ({
     paper: {
       padding: theme.spacing(1),
@@ -44,7 +44,10 @@ export default function Board(props) {
           )}
         </h1>
       </div>
-      <p className={`cardtext ${props.detailclname}`}>{props.detail}</p>
+      <p className={`cardtext ${props.detailclname}`}>
+        {props.detail}
+        {props.children}
+      </p>
     </Paper>
   );
 }

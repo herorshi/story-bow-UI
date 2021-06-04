@@ -1,28 +1,38 @@
-import react from "react";
+import react, { useState } from "react";
 import StyledButton from "./StyledButton";
 import PageHeader from "./page/PageHeader";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Radio from "@material-ui/core/Radio";
+import PlainPaperCard from "./PlainPaperCard";
 export default function ModalCheckBox({
   InputTitle,
   handleClose,
   Choice,
-  toggleCheckBox,
+  setCheckBoxChoice,
   CheckBoxKey,
 }) {
+  const [modalState, setModalState] = useState(Choice);
+
+  const toggleCheckBox = (Choice) => {
+    setModalState((prev) => ({ ...prev, [Choice]: !prev[Choice] }));
+  };
+
   return (
     <PageHeader data={InputTitle}>
-      <div>
+      <PlainPaperCard>
         {CheckBoxKey.map((c, n) => (
-          <input
-            type="radio"
-            checked={Choice[c]}
-            onClick={() => {
-              toggleCheckBox(c);
-            }}
-          />
+          <>
+            <Radio
+              checked={modalState[c]}
+              onClick={() => {
+                toggleCheckBox(c);
+              }}
+            />
+            {c}
+            <br />
+          </>
         ))}
-      </div>
+      </PlainPaperCard>
       <div className="flexend" style={{ marginTop: "1em" }}>
         <StyledButton
           variant="contained"
@@ -37,6 +47,7 @@ export default function ModalCheckBox({
           variant="contained"
           style={{ background: "var(--primary)" }}
           onClick={() => {
+            setCheckBoxChoice(modalState);
             handleClose();
           }}
         >
