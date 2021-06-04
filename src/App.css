@@ -25,6 +25,7 @@
   display: flex;
   justify-content: space-between;
   color: black;
+  margin-top: 1em;
 }
 h1 {
   margin-bottom: 0;
