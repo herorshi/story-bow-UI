@@ -1,14 +1,10 @@
 import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import Modal from "@material-ui/core/Modal";
-import { withStyles, makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
 import PaperCard from "./PaperCard";
 import ModalPaper from "./ModalPaper";
 import ModalToPage from "./ModalToPage";
-import PageHeader from "./page/PageHeader";
 import pageDetail from "../pageDetail";
-import StyledButton from "./StyledButton";
 import ModalEditTxt from "./ModalEditTxt";
 import ModalCheckBox from "./ModalCheckBox";
 export default function CoverageBoard(props) {
@@ -31,6 +27,14 @@ export default function CoverageBoard(props) {
   });
   const CheckBoxKey = ["Choice1", "Choice2", "Choice3"];
 
+  const [GenreChoice, setGenreChoice] = useState({
+    Scifi: false,
+    Adventure: false,
+    Horror: false,
+    Drama: false,
+  });
+  const GenreKey = ["Scifi", "Adventure", "Horror", "Drama"];
+
   const toggleCheckBox = (Choice) => {
     setCheckBoxChoice((prev) => ({ ...prev, [Choice]: !prev[Choice] }));
   };
@@ -38,13 +42,21 @@ export default function CoverageBoard(props) {
   const setTitle = (title) => {
     setCoverage({ ...coverage, title });
   };
+  const setLockLine = (LockLine) => {
+    setCoverage({ ...coverage, LockLine });
+  };
 
   const handleModalTitle = () => {
     setModalChoice("Edit Title");
     handleOpen();
   };
+
   const handleModalCheckBox = () => {
     setModalChoice("CheckBox");
+    handleOpen();
+  };
+  const handleGenreCheckBox = () => {
+    setModalChoice("Genre");
     handleOpen();
   };
 
@@ -112,6 +124,16 @@ export default function CoverageBoard(props) {
               CheckBoxKey={CheckBoxKey}
             ></ModalCheckBox>
           )}
+          {/* Genre */}
+          {modalChoice == "Genre" && (
+            <ModalCheckBox
+              InputTitle={pageDetail.GenreModal}
+              Choice={GenreChoice}
+              setCheckBoxChoice={setGenreChoice}
+              handleClose={handleClose}
+              CheckBoxKey={GenreKey}
+            ></ModalCheckBox>
+          )}
         </ModalPaper>
       </Modal>
       {/* 1 line = 12 sm split to 4 and 8 */}
@@ -150,10 +172,11 @@ export default function CoverageBoard(props) {
       <Grid item xs={6} sm={4}>
         <PaperCard
           title="Genre"
-          detail="Comedy"
+          detail={GenerateCheckBoxDetail(GenreChoice)}
           detailclname="primary"
           height="10em"
           width="100%"
+          editfn={handleGenreCheckBox}
         ></PaperCard>
       </Grid>
       <Grid item xs={6} sm={12}>

@@ -1,7 +1,6 @@
 import React from "react";
-import { Container, Button } from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
+import { Container } from "@material-ui/core";
+
 import StyledButton from "../StyledButton";
 
 export default function PageHeader(props) {
