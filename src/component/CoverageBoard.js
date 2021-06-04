@@ -81,43 +81,7 @@ export default function CoverageBoard(props) {
               setTxt={setTitle}
               {...editTxtProps}
             ></ModalEditTxt>
-            // <PageHeader data={pageDetail.InputTitle}>
-            //   <div className="flexend">
-            //     <CssTextField
-            //       placeholder="placeholder"
-            //       variant="outlined"
-            //       id="custom-css-outlined-input"
-            //       style={{ width: "95%" }}
-            //       multiline={true}
-            //       rows="10"
-            //       value={edittxt}
-            //       onChange={handleChange}
-            //     />
-            //   </div>
-            //   <div className="flexend" style={{ marginTop: "1em" }}>
-            //     <StyledButton
-            //       variant="contained"
-            //       style={{ background: "#808080", width: "10em" }}
-            //       onClick={() => {
-            //         handleClose();
-            //       }}
-            //     >
-            //       ปิด
-            //     </StyledButton>
-            //     <StyledButton
-            //       variant="contained"
-            //       style={{ background: "var(--primary)" }}
-            //       onClick={() => {
-            //         setTitle(edittxt);
-            //         handleClose();
-            //       }}
-            //     >
-            //       ยืนยันรายการ
-            //     </StyledButton>
-            //   </div>
-            // </PageHeader>
           )}
-          {/*  */}
         </ModalPaper>
       </Modal>
       {/* 1 line = 12 sm split to 4 and 8 */}
