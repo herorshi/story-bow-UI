@@ -16,7 +16,13 @@ export default function PageHeader(props) {
         <h1>{props.data.title}</h1>
         <h1>
           {props.fn0 && (
-            <StyledButton variant="contained" style={{ background: "#808080" }}>
+            <StyledButton
+              variant="contained"
+              style={{ background: "#808080" }}
+              onClick={() => {
+                props.fn0();
+              }}
+            >
               {props.fn0txt}
             </StyledButton>
           )}
@@ -24,12 +30,24 @@ export default function PageHeader(props) {
             รับชมวีดีโอสอน
           </StyledButton>
           {props.fn2 && (
-            <StyledButton variant="contained" style={{ background: "#FFA500" }}>
+            <StyledButton
+              variant="contained"
+              style={{ background: "#FFA500" }}
+              onClick={() => {
+                props.fn2();
+              }}
+            >
               {props.fn2txt}
             </StyledButton>
           )}
           {props.fn3 && (
-            <StyledButton variant="contained" color="primary">
+            <StyledButton
+              variant="contained"
+              color="primary"
+              onClick={() => {
+                props.fn3();
+              }}
+            >
               {props.fn3txt}
             </StyledButton>
           )}
