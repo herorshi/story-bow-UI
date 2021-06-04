@@ -6,6 +6,7 @@ import Board from "./component/Board";
 import CoveragePage from "./component/page/CoveragePage";
 import PremiseToolPage from "./component/page/PremiseToolPage";
 import IdeaPremisePage from "./component/page/IdeaPremisePage";
+import BoardPage from "./component/page/BoardPage";
 import { Container, Button } from "@material-ui/core";
 function App() {
   return (
@@ -13,8 +14,12 @@ function App() {
       <div className="Cardheader"> </div>
       <div className="container" style={{ height: "45em" }}>
         <Switch>
-          {/* CoveragePage */}
+          {/* BoardPage */}
           <Route exact path="/">
+            <BoardPage />
+          </Route>
+          {/* CoveragePage */}
+          <Route exact path="/CoveragePage">
             <CoveragePage />
           </Route>
           {/* PremiseToolPage */}
