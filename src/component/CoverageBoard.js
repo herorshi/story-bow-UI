@@ -1,13 +1,47 @@
 import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import Modal from "@material-ui/core/Modal";
-import { makeStyles } from "@material-ui/core/styles";
+import { withStyles, makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
 import PaperCard from "./PaperCard";
 import ModalPaper from "./ModalPaper";
 import ModalToPage from "./ModalToPage";
+import PageHeader from "./page/PageHeader";
+import pageDetail from "../pageDetail";
+import StyledButton from "./StyledButton";
+import ModalEditTxt from "./ModalEditTxt";
 
 export default function CoverageBoard(props) {
   const [open, setOpen] = useState(false);
+  const [modalChoice, setModalChoice] = useState("");
+  const [edittxt, setEditTxt] = useState("");
+  const [coverage, setCoverage] = useState({
+    title: "",
+    Premise: "",
+    Genre: "",
+    Theme: "",
+    LockStoryLine: "",
+    CheckBox: "",
+    LockLine: "",
+  });
+
+  const setTitle = (title) => {
+    setCoverage({ ...coverage, title });
+  };
+
+  const handleModalTitle = () => {
+    setModalChoice("Edit Title");
+    handleOpen();
+  };
+
+  const handlePremiseTool = () => {
+    setModalChoice("Use Premise Tool");
+    handleOpen();
+  };
+  const handleChange = (event) => {
+    console.log(event.target.value);
+    setEditTxt(event.target.value);
+  };
 
   const handleOpen = () => {
     setOpen(true);
@@ -16,18 +50,86 @@ export default function CoverageBoard(props) {
   const handleClose = () => {
     setOpen(false);
   };
+  // function ที่เปิด modal โดยที่ก่อนเปิดทำการสร้าง modal นั้นทันที
+  // วิธีการใช้งาน ส่ง function ที่สร้าง modal พร้อมเปิด modal ให้ในปุ่ม edit ของสมาชิกแต่ละ coverage โดยเฉพาะ
+  // โดยทำข้างใน modal จะเปลี่ยน title เนื้อหา และ function เมื่อกดปุ่ม confirm และ handleclose เมื่อกดปุ่ม cancle
+
+  let editTxtProps = { handleClose, handleChange, edittxt };
 
   return (
     <Grid className="board" container spacing={3}>
+      {/* Modal */}
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        <ModalPaper>
+          {/* modalChoice */}
+          {modalChoice == "Use Premise Tool" && (
+            <ModalToPage
+              title="Use Premise Tool"
+              description="ต้องการที่จะใช้ Premise Tool หรือไม่"
+              to="PremiseTool"
+            ></ModalToPage>
+          )}
+          {/* EditTitle */}
+          {modalChoice == "Edit Title" && (
+            <ModalEditTxt
+              InputTitle={pageDetail.InputTitle}
+              setTxt={setTitle}
+              {...editTxtProps}
+            ></ModalEditTxt>
+            // <PageHeader data={pageDetail.InputTitle}>
+            //   <div className="flexend">
+            //     <CssTextField
+            //       placeholder="placeholder"
+            //       variant="outlined"
+            //       id="custom-css-outlined-input"
+            //       style={{ width: "95%" }}
+            //       multiline={true}
+            //       rows="10"
+            //       value={edittxt}
+            //       onChange={handleChange}
+            //     />
+            //   </div>
+            //   <div className="flexend" style={{ marginTop: "1em" }}>
+            //     <StyledButton
+            //       variant="contained"
+            //       style={{ background: "#808080", width: "10em" }}
+            //       onClick={() => {
+            //         handleClose();
+            //       }}
+            //     >
+            //       ปิด
+            //     </StyledButton>
+            //     <StyledButton
+            //       variant="contained"
+            //       style={{ background: "var(--primary)" }}
+            //       onClick={() => {
+            //         setTitle(edittxt);
+            //         handleClose();
+            //       }}
+            //     >
+            //       ยืนยันรายการ
+            //     </StyledButton>
+            //   </div>
+            // </PageHeader>
+          )}
+          {/*  */}
+        </ModalPaper>
+      </Modal>
       {/* 1 line = 12 sm split to 4 and 8 */}
       <Grid item xs={12} sm={4}>
         {/* use PaperCard */}
         <PaperCard
           title="Title"
-          detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in"
+          detail={coverage.title}
           detailclname="primary"
           height="10em"
           width="100%"
+          editfn={handleModalTitle}
         ></PaperCard>
       </Grid>
       <Grid item xs={12} sm={8}>
@@ -38,25 +140,9 @@ export default function CoverageBoard(props) {
           detailclname="primary"
           height="10em"
           width="100%"
-          AdvanceFunction={handleOpen}
+          AdvanceFunction={handlePremiseTool}
           closeModal={handleClose}
         ></PaperCard>
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="simple-modal-title"
-          aria-describedby="simple-modal-description"
-        >
-          {
-            <ModalPaper>
-              <ModalToPage
-                title="Use Premise Tool"
-                description="ต้องการที่จะใช้ Premise Tool หรือไม่"
-                to="PremiseTool"
-              ></ModalToPage>
-            </ModalPaper>
-          }
-        </Modal>
       </Grid>
       <Grid item xs={6} sm={8}>
         <PaperCard
