@@ -27,7 +27,7 @@ export default function Board(props) {
         </h1>
         <h1>
           {/* EditButton */}
-          <Button>+</Button>
+          <Button>edit</Button>
           {/* AdvanceButton */}
           {props.AdvanceFunction && (
             <Button onClick={() => props.AdvanceFunction()}>
