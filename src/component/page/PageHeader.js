@@ -1,23 +1,37 @@
 import React from "react";
 import { Container, Button } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
+const StyledButton = withStyles({
+  root: {
+    color: "white",
+    marginLeft: "0.75em",
+    textTransform: "none",
+    padding: "6px 30px",
+  },
+})(Button);
 export default function PageHeader(props) {
   return (
     <Container className="page">
       <div className="pageHeader">
         <h1>{props.data.title}</h1>
         <h1>
-          <Button variant="contained" color="secondary">
+          {props.fn0 && (
+            <StyledButton variant="contained" style={{ background: "#808080" }}>
+              {props.fn0txt}
+            </StyledButton>
+          )}
+          <StyledButton variant="contained" color="secondary">
             รับชมวีดีโอสอน
-          </Button>
+          </StyledButton>
           {props.fn2 && (
-            <Button variant="contained" color="orange">
+            <StyledButton variant="contained" style={{ background: "#FFA500" }}>
               {props.fn2txt}
-            </Button>
+            </StyledButton>
           )}
           {props.fn3 && (
-            <Button variant="contained" color="orange">
+            <StyledButton variant="contained" color="primary">
               {props.fn3txt}
-            </Button>
+            </StyledButton>
           )}
         </h1>
       </div>
