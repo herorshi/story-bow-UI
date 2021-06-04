@@ -7,7 +7,12 @@ import { Link } from "react-router-dom";
 export default function CoveragePage(props) {
   return (
     <>
-      <PageHeader data={pageDetail.PremiseTool}></PageHeader>
+      <PageHeader
+        data={pageDetail.PremiseTool}
+        showvdo={() => {
+          alert("showvdo");
+        }}
+      ></PageHeader>
       <Board></Board>
       <Container
         className="flexend"

@@ -26,9 +26,17 @@ export default function PageHeader(props) {
               {props.fn0txt}
             </StyledButton>
           )}
-          <StyledButton variant="contained" color="secondary">
-            รับชมวีดีโอสอน
-          </StyledButton>
+          {props.showvdo && (
+            <StyledButton
+              variant="contained"
+              color="secondary"
+              onClick={() => {
+                props.showvdo();
+              }}
+            >
+              รับชมวีดีโอสอน
+            </StyledButton>
+          )}
           {props.fn2 && (
             <StyledButton
               variant="contained"

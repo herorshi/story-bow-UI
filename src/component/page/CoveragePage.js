@@ -5,7 +5,12 @@ import Board from "../Board";
 import CoverageBoard from "../CoverageBoard";
 export default function CoveragePage(props) {
   return (
-    <PageHeader data={pageDetail.Coverage}>
+    <PageHeader
+      data={pageDetail.Coverage}
+      showvdo={() => {
+        alert("showvdo");
+      }}
+    >
       <Board>
         <CoverageBoard />
       </Board>
