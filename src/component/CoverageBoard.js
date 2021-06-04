@@ -10,7 +10,7 @@ import PageHeader from "./page/PageHeader";
 import pageDetail from "../pageDetail";
 import StyledButton from "./StyledButton";
 import ModalEditTxt from "./ModalEditTxt";
-
+import ModalCheckBox from "./ModalCheckBox";
 export default function CoverageBoard(props) {
   const [open, setOpen] = useState(false);
   const [modalChoice, setModalChoice] = useState("");
@@ -24,6 +24,17 @@ export default function CoverageBoard(props) {
     CheckBox: "",
     LockLine: "",
   });
+  const [CheckBoxChoice, setCheckBoxChoice] = useState({
+    Choice1: false,
+    Choice2: false,
+    Choice2: false,
+  });
+  const CheckBoxKey = ["Choice1", "Choice2", "Choice3"];
+
+  const toggleCheckBox = (Choice) => {
+    console.log("Choice", Choice);
+    setCheckBoxChoice((prev) => ({ ...prev, [Choice]: !prev[Choice] }));
+  };
 
   const setTitle = (title) => {
     setCoverage({ ...coverage, title });
@@ -31,6 +42,10 @@ export default function CoverageBoard(props) {
 
   const handleModalTitle = () => {
     setModalChoice("Edit Title");
+    handleOpen();
+  };
+  const handleModalCheckBox = () => {
+    setModalChoice("CheckBox");
     handleOpen();
   };
 
@@ -81,6 +96,16 @@ export default function CoverageBoard(props) {
               setTxt={setTitle}
               {...editTxtProps}
             ></ModalEditTxt>
+          )}
+          {/* CheckBox */}
+          {modalChoice == "CheckBox" && (
+            <ModalCheckBox
+              InputTitle={pageDetail.CheckBoxModal}
+              Choice={CheckBoxChoice}
+              toggleCheckBox={toggleCheckBox}
+              handleClose={handleClose}
+              CheckBoxKey={CheckBoxKey}
+            ></ModalCheckBox>
           )}
         </ModalPaper>
       </Modal>
@@ -151,6 +176,7 @@ export default function CoverageBoard(props) {
           detailclname="primary"
           height="10em"
           width="100%"
+          editfn={handleModalCheckBox}
         ></PaperCard>
       </Grid>
     </Grid>

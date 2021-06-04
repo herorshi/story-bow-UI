@@ -35,7 +35,7 @@ export default function ModalEditTxt({
     <PageHeader data={InputTitle}>
       <div className="flexend">
         <CssTextField
-          placeholder="placeholder"
+          placeholder="กรุณาระบข้อความ..."
           variant="outlined"
           id="custom-css-outlined-input"
           style={{ width: "95%" }}
