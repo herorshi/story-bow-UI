@@ -9,7 +9,7 @@ export default function Board(props) {
       marginRight: "1em",
       paddingTop: 0,
       height: `${props.height ? props.height : "10em"}`,
-      width: "100%",
+      width: `${props.width ? props.width : "auto"}`,  
       borderRadius: "0.75em",
 
       "&:hover": {

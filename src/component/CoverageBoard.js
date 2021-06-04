@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import PaperCard from "./PaperCard";
 import ModalPaper from "./ModalPaper";
 import ModalToPage from "./ModalToPage";
+
 export default function CoverageBoard(props) {
   const [open, setOpen] = useState(false);
 
@@ -26,6 +27,7 @@ export default function CoverageBoard(props) {
           detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in"
           detailclname="primary"
           height="10em"
+          width="100%"
         ></PaperCard>
       </Grid>
       <Grid item xs={12} sm={8}>
@@ -35,6 +37,7 @@ export default function CoverageBoard(props) {
           detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in"
           detailclname="primary"
           height="10em"
+          width="100%"
           AdvanceFunction={handleOpen}
           closeModal={handleClose}
         ></PaperCard>
@@ -61,6 +64,7 @@ export default function CoverageBoard(props) {
           detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in"
           detailclname="primary"
           height="10em"
+          width="100%"
         ></PaperCard>
       </Grid>
       <Grid item xs={6} sm={4}>
@@ -69,6 +73,7 @@ export default function CoverageBoard(props) {
           detail="Comedy"
           detailclname="primary"
           height="10em"
+          width="100%"
         ></PaperCard>
       </Grid>
       <Grid item xs={6} sm={12}>
@@ -77,6 +82,7 @@ export default function CoverageBoard(props) {
           detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in"
           detailclname="primary"
           height="15em"
+          width="100%"
         ></PaperCard>
       </Grid>
       <Grid item xs={6} sm={8}>
@@ -85,6 +91,7 @@ export default function CoverageBoard(props) {
           detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in"
           detailclname="primary"
           height="10em"
+          width="100%"
         ></PaperCard>
       </Grid>
       <Grid item xs={6} sm={4}>
@@ -93,6 +100,7 @@ export default function CoverageBoard(props) {
           detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in"
           detailclname="primary"
           height="10em"
+          width="100%"
         ></PaperCard>
       </Grid>
     </Grid>

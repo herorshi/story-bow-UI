@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Button } from "@material-ui/core";
-import "./CoveragePage.css";
 export default function PageHeader(props) {
   return (
     <Container className="page">

@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import PageHeader from "./component/page/PageHeader";
 import pageDetail from "./pageDetail";
 import Board from "./component/Board";
-import CoverageBoard from "./component/CoverageBoard";
+import CoveragePage from "./component/page/CoveragePage";
+import PremiseToolPage from "./component/page/PremiseToolPage";
+import IdeaPremisePage from "./component/page/IdeaPremisePage";
 import { Container, Button } from "@material-ui/core";
 function App() {
   return (
@@ -13,40 +15,15 @@ function App() {
         <Switch>
           {/* CoveragePage */}
           <Route exact path="/">
-            <PageHeader data={pageDetail.Coverage}>
-              <Board>
-                <CoverageBoard />
-              </Board>
-            </PageHeader>
+            <CoveragePage />
           </Route>
           {/* PremiseToolPage */}
           <Route exact path="/PremiseTool">
-            <PageHeader data={pageDetail.PremiseTool}></PageHeader>
-            <Board></Board>
-            <Container
-              className="flexend"
-              style={{ display: "flex", marginTop: "1em" }}
-            >
-              <Link to="/">
-                <Button
-                  variant="contained"
-                  color="gray"
-                  style={{ marginRight: "1em" }}
-                >
-                  Back
-                </Button>
-              </Link>
-              <Link to="/PremiseTool/IdeaPremise">
-                <Button variant="contained" color="primary">
-                  Next
-                </Button>
-              </Link>
-            </Container>
+            <PremiseToolPage />
           </Route>
+          {/* IdeaPremise Page */}
           <Route exact path="/PremiseTool/IdeaPremise">
-            <PageHeader data={pageDetail.IdeaPremise}>
-              <Board></Board>
-            </PageHeader>
+            <IdeaPremisePage />
           </Route>
         </Switch>
       </div>
