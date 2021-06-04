@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export default function IdeaPremisePage(props) {
   return (
     <>
-      <PageHeader data={pageDetail.IdeaPremise}>
+      <PageHeader data={pageDetail.IdeaPremise} fn2={()=>{alert("click")}} fn2txt="" fn3 fn3txt>
         <Board></Board>
       </PageHeader>
     </>
