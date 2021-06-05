@@ -33,14 +33,12 @@ export default function PaperCard(props) {
                 props.editfn();
               }}
             >
-              edit
+              <FaTwitter />
             </Button>
           )}
           {/* AdvanceButton */}
           {props.AdvanceFunction && (
-            <Button onClick={() => props.AdvanceFunction()}>
-              <FaTwitter />
-            </Button>
+            <Button onClick={() => props.AdvanceFunction()}>fn</Button>
           )}
         </h1>
       </div>
