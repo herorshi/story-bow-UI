@@ -20,6 +20,9 @@
 .subtxt {
   text-indent: 2em;
 }
+.padL1 {
+  padding-left: 1em;
+}
 .pageHeader {
   display: flex;
   justify-content: space-between;

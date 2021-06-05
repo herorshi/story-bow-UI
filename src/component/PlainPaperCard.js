@@ -5,10 +5,9 @@ import { FaTwitter } from "react-icons/fa";
 export default function PlainPaperCard(props) {
   const useStyles = makeStyles((theme) => ({
     paper: {
-      padding: theme.spacing(1),
+      padding: "1em",
       paddingRight: "0",
       marginRight: "1em",
-      paddingTop: "1em",
       height: `${props.height ? props.height : "10em"}`,
       width: `${props.width ? props.width : "auto"}`,
       borderRadius: "0.75em",
