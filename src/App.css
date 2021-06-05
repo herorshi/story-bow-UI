@@ -19,7 +19,6 @@
 
 .subtxt {
   text-indent: 2em;
-  padding-left: 2em;
 }
 .pageHeader {
   display: flex;
@@ -37,4 +36,7 @@ h1 {
 .flexend {
   display: flex;
   justify-content: flex-end;
+}
+.primarytxt {
+  color: var(--primary);
 }

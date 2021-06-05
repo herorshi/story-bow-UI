@@ -33,18 +33,17 @@ export default function ModalEditTxt({
 }) {
   return (
     <PageHeader data={InputTitle}>
-      <div className="flexend">
-        <CssTextField
-          placeholder="กรุณาระบข้อความ..."
-          variant="outlined"
-          id="custom-css-outlined-input"
-          style={{ width: "95%" }}
-          multiline={true}
-          rows="10"
-          value={edittxt}
-          onChange={handleChange}
-        />
-      </div>
+      <CssTextField
+        placeholder="กรุณาระบข้อความ..."
+        variant="outlined"
+        id="custom-css-outlined-input"
+        style={{ width: "100%" }}
+        multiline={true}
+        rows="10"
+        value={edittxt}
+        onChange={handleChange}
+      />
+
       <div className="flexend" style={{ marginTop: "1em" }}>
         <StyledButton
           variant="contained"
