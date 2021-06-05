@@ -79,7 +79,7 @@ export default function ModalEditOrTool({
               }}
             >
               + <br />
-              กดเพื่่อสร้าง {toolName}
+              กดเพื่อสร้าง {toolName}
             </div>
           </CustomLink>
           <h1>
