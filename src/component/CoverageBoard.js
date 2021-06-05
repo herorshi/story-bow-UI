@@ -43,6 +43,9 @@ export default function CoverageBoard(props) {
   const setTitle = (title) => {
     setCoverage({ ...coverage, title });
   };
+  const setPremise = (Premise) => {
+    setCoverage({ ...coverage, Premise });
+  };
   const setLockLine = (LockLine) => {
     setCoverage({ ...coverage, LockLine });
   };
@@ -58,6 +61,11 @@ export default function CoverageBoard(props) {
   };
   const handleGenreCheckBox = () => {
     setModalChoice("Genre");
+    handleOpen();
+  };
+
+  const handlePremise = () => {
+    setModalChoice("Premise");
     handleOpen();
   };
 
@@ -142,13 +150,12 @@ export default function CoverageBoard(props) {
           )}
           {/* Premise */}
           {modalChoice == "Premise" && (
-            <ModalCheckBox
-              InputTitle={pageDetail.GenreModal}
-              Choice={GenreChoice}
-              setCheckBoxChoice={setGenreChoice}
-              handleClose={handleClose}
-              CheckBoxKey={GenreKey}
-            ></ModalCheckBox>
+            <ModalEditOrTool
+              InputTitle={pageDetail.PremiseModal}
+              setTxt={setPremise}
+              toolName="Idea Premise Tool"
+              {...editTxtProps}
+            ></ModalEditOrTool>
           )}
         </ModalPaper>
       </Modal>
@@ -168,11 +175,11 @@ export default function CoverageBoard(props) {
         {/* ต้องใส่ modal ให้ปุ่มใน PaperCard ยังไงดี ต้องส่ง chidren ไม่ได้ มี2ปุ่ม 2 modal*/}
         <PaperCard
           title="Premise"
-          detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in"
+          detail={coverage.Premise}
           detailclname="primary"
           height="10em"
           width="100%"
-          editfn={handleModalTitle}
+          editfn={handlePremise}
           closeModal={handleClose}
         ></PaperCard>
       </Grid>

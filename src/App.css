@@ -23,6 +23,9 @@
 .padL1 {
   padding-left: 1em;
 }
+.marg1 {
+  margin: "1em";
+}
 .pageHeader {
   display: flex;
   justify-content: space-between;

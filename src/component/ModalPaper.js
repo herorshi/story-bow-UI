@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
     borderTop: "2em solid var(--primary)",
     borderRadius: "0.75em",
     boxShadow: theme.shadows[5],
+    width: "50em",
     padding: theme.spacing(1, 4, 3),
   },
 }));
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 export default function ModalBody(props) {
   const classes = useStyles();
   const modalStyle = {
-    top: `${30}%`,
+    top: `${40}%`,
     left: `${50}%`,
     transform: `translate(-${50}%, -${50}%)`,
   };
