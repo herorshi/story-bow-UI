@@ -82,7 +82,7 @@ export default function ModalEditOrTool({
               กดเพื่อสร้าง {toolName}
             </div>
           </CustomLink>
-          <h1>
+          <h1 style={{ margin: "0.75em 0" }}>
             <TickLogo
               color="red"
               stroke="var(--primary)"

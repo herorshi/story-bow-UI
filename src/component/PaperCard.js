@@ -22,10 +22,10 @@ export default function PaperCard(props) {
   return (
     <Paper className={classes.paper}>
       <div className="pageHeader">
-        <h1 style={{ marginLeft: "1em", color: `${props.h1color}` }}>
+        <h2 style={{ marginLeft: "1em", color: `${props.h1color}` }}>
           {props.title}
-        </h1>
-        <h1>
+        </h2>
+        <h2>
           {/* EditButton */}
           {props.editfn && (
             <Button
@@ -40,7 +40,7 @@ export default function PaperCard(props) {
           {props.AdvanceFunction && (
             <Button onClick={() => props.AdvanceFunction()}>fn</Button>
           )}
-        </h1>
+        </h2>
       </div>
       <p className={`cardtext ${props.detailclname}`}>
         {props.detail}

@@ -23,6 +23,7 @@
   text-align: center;
 }
 .subtxt {
+  margin-top: 0.75em;
   text-indent: 2em;
 }
 .padL1 {
@@ -36,6 +37,9 @@
   justify-content: space-between;
   color: black;
   margin-top: 1em;
+}
+.pageHeader > h2 {
+  margin-top: 0.75em;
 }
 h1 {
   margin-bottom: 0;

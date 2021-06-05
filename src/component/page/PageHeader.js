@@ -55,7 +55,7 @@ export default function PageHeader(props) {
           )}
         </h1>
       </div>
-      {props.data.detail&&<p className="subtxt padL1">{props.data.detail}</p>}
+      {props.data.detail && <p className="subtxt padL1">{props.data.detail}</p>}
       {props.children}
     </Container>
   );
