@@ -13,9 +13,9 @@ export default function PaperCard(props) {
       width: `${props.width ? props.width : "auto"}`,
       borderRadius: "0.75em",
 
-      "&:hover": {
-        border: `1px solid var(--primary)`,
-      },
+      // "&:hover": {
+      //   border: `1px solid var(--primary)`,
+      // },
     },
   }));
   const classes = useStyles();
