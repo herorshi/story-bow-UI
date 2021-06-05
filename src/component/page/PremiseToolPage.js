@@ -3,7 +3,7 @@ import PageHeader from "./PageHeader";
 import pageDetail from "../../pageDetail";
 import Board from "../Board";
 import { Container, Button } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import Link from "../CustomLink";
 export default function CoveragePage(props) {
   return (
     <>

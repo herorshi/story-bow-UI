@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 export default function ModalBody(props) {
   const classes = useStyles();
   const modalStyle = {
-    top: `${40}%`,
+    top: `${50}%`,
     left: `${50}%`,
     transform: `translate(-${50}%, -${50}%)`,
   };

@@ -4,6 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import PageHeader from "./page/PageHeader";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import CssTextField from "./CssTextField";
+import FooterButtonForModal from "./FooterButtonForModal";
 export default function ModalEditTxt({
   InputTitle,
   setTxt,
@@ -13,29 +14,13 @@ export default function ModalEditTxt({
 }) {
   return (
     <PageHeader data={InputTitle}>
-      <CssTextField edittxt={edittxt} handleChange={handleChange}/>
+      <CssTextField edittxt={edittxt} handleChange={handleChange} />
 
-      <div className="flexend" style={{ marginTop: "1em" }}>
-        <StyledButton
-          variant="contained"
-          style={{ background: "#808080", width: "10em" }}
-          onClick={() => {
-            handleClose();
-          }}
-        >
-          ปิด
-        </StyledButton>
-        <StyledButton
-          variant="contained"
-          style={{ background: "var(--primary)" }}
-          onClick={() => {
-            setTxt(edittxt);
-            handleClose();
-          }}
-        >
-          ยืนยันรายการ
-        </StyledButton>
-      </div>
+      <FooterButtonForModal
+        handleClose={handleClose}
+        edittxt={edittxt}
+        setTxt={setTxt}
+      ></FooterButtonForModal>
     </PageHeader>
   );
 }

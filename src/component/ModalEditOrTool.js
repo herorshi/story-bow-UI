@@ -1,10 +1,14 @@
 import react, { useState } from "react";
 import StyledButton from "./StyledButton";
-import PageHeader from "./page/PageHeader";
+import { Container } from "@material-ui/core";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import CssTextField from "./CssTextField";
 import Button from "@material-ui/core/Button";
-import CheckIcon from "../asset/checked-buttom.svg";
+import PageHeader from "./page/PageHeader";
+import { FaTwitter } from "react-icons/fa";
+import { ReactComponent as TickLogo } from "../asset/checked-buttom.svg";
+import CustomLink from "./CustomLink";
+import FooterButtonForModal from "./FooterButtonForModal";
 export default function ModalEditOrTool({
   InputTitle,
   setTxt,
@@ -12,10 +16,11 @@ export default function ModalEditOrTool({
   handleClose,
   handleChange,
   toolName,
+  editfn,
 }) {
   const [useTool, setUseTool] = useState(false);
   return (
-    <PageHeader data={InputTitle}>
+    <PageHeader data={{ ...InputTitle, title: InputTitle.title + "*" }}>
       <p className="marg1 pageHeader">
         <Button
           variant="outlined"
@@ -35,32 +40,69 @@ export default function ModalEditOrTool({
           {toolName}
         </Button>
       </p>
-      {!useTool && (
-        <CssTextField edittxt={edittxt} handleChange={handleChange} />
-      )}
-      <img src={require("../asset/checked-buttom.svg")} />
 
-      <div className="flexend" style={{ marginTop: "1em" }}>
-        <StyledButton
-          variant="contained"
-          style={{ background: "#808080", width: "10em" }}
-          onClick={() => {
-            handleClose();
-          }}
-        >
-          ปิด
-        </StyledButton>
-        <StyledButton
-          variant="contained"
-          style={{ background: "var(--primary)" }}
-          onClick={() => {
-            setTxt(edittxt);
-            handleClose();
-          }}
-        >
-          ยืนยันรายการ
-        </StyledButton>
-      </div>
+      {useTool && (
+        <>
+          <div className="pageHeader">
+            <h1>
+              {" "}
+              <TickLogo
+                color="red"
+                stroke="var(--primary)"
+                fill="blue"
+                width="1em"
+              />
+              {"      "}
+              {toolName}
+            </h1>
+            <h1>
+              <Button
+                onClick={() => {
+                  editfn();
+                }}
+              >
+                <FaTwitter />
+              </Button>
+            </h1>
+          </div>
+          <CustomLink to="/PremiseTool">
+            <div
+              className="centerverhor"
+              style={{
+                backgroundColor: "#f5f5f5",
+                border: `2px solid var(--primary)`,
+                borderRadius: "0.5em",
+                color: "#A0A0A0",
+                height: "7em",
+                fontSize: "2em",
+                marginTop: "1em",
+              }}
+            >
+              + <br />
+              กดเพื่่อสร้าง {toolName}
+            </div>
+          </CustomLink>
+          <h1>
+            <TickLogo
+              color="red"
+              stroke="var(--primary)"
+              fill="blue"
+              width="1em"
+            />
+            {"      "}
+            Rewrite
+            {"      "}
+            {InputTitle.title}
+          </h1>
+        </>
+      )}
+
+      <CssTextField edittxt={edittxt} handleChange={handleChange} />
+      <FooterButtonForModal
+        handleClose={handleClose}
+        edittxt={edittxt}
+        setTxt={setTxt}
+      ></FooterButtonForModal>
     </PageHeader>
   );
 }

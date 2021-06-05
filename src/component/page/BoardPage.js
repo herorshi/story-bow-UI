@@ -2,13 +2,9 @@ import React from "react";
 import PageHeader from "./PageHeader";
 import pageDetail from "../../pageDetail";
 import Board from "../Board";
-import { Link } from "react-router-dom";
+import Link from "../CustomLink";
 import Grid from "@material-ui/core/Grid";
-import Modal from "@material-ui/core/Modal";
-import { makeStyles } from "@material-ui/core/styles";
 import PaperCard from "../PaperCard";
-import ModalPaper from "../ModalPaper";
-import ModalToPage from "../ModalToPage";
 import { useHistory } from "react-router-dom";
 export default function CoveragePage(props) {
   let history = useHistory();

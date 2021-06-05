@@ -4,6 +4,7 @@ import PageHeader from "./page/PageHeader";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Radio from "@material-ui/core/Radio";
 import PlainPaperCard from "./PlainPaperCard";
+import FooterButtonForModal from "./FooterButtonForModal";
 export default function ModalCheckBox({
   InputTitle,
   handleClose,
@@ -33,27 +34,11 @@ export default function ModalCheckBox({
           </>
         ))}
       </PlainPaperCard>
-      <div className="flexend" style={{ marginTop: "1em" }}>
-        <StyledButton
-          variant="contained"
-          style={{ background: "#808080", width: "10em" }}
-          onClick={() => {
-            handleClose();
-          }}
-        >
-          ปิด
-        </StyledButton>
-        <StyledButton
-          variant="contained"
-          style={{ background: "var(--primary)" }}
-          onClick={() => {
-            setCheckBoxChoice(modalState);
-            handleClose();
-          }}
-        >
-          ยืนยันรายการ
-        </StyledButton>
-      </div>
+      <FooterButtonForModal
+        handleClose={handleClose}
+        edittxt={modalState}
+        setTxt={setCheckBoxChoice}
+      ></FooterButtonForModal>
     </PageHeader>
   );
 }
