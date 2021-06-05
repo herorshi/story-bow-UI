@@ -34,7 +34,7 @@ export default function PageHeader(props) {
           {props.fn2 && (
             <StyledButton
               variant="contained"
-              style={{ background: "#FFA500" }}
+              color="primary"
               onClick={() => {
                 props.fn2();
               }}
@@ -45,7 +45,7 @@ export default function PageHeader(props) {
           {props.fn3 && (
             <StyledButton
               variant="contained"
-              color="primary"
+              style={{ background: "#FFA500" }}
               onClick={() => {
                 props.fn3();
               }}
@@ -55,7 +55,7 @@ export default function PageHeader(props) {
           )}
         </h1>
       </div>
-      <p className="subtxt padL1">{props.data.detail}</p>
+      {props.data.detail&&<p className="subtxt padL1">{props.data.detail}</p>}
       {props.children}
     </Container>
   );

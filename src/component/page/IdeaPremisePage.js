@@ -9,15 +9,17 @@ export default function IdeaPremisePage(props) {
     <>
       <PageHeader
         data={pageDetail.IdeaPremise}
-        fn2={() => {
-          alert("click");
-        }}
-        fn2txt=""
-        fn3
-        fn3txt
         showvdo={() => {
           alert("showvdo");
         }}
+        fn2={() => {
+          alert("+ เพิ่มรายการ");
+        }}
+        fn2txt="+ เพิ่มรายการ"
+        fn3={() => {
+          alert("แก้ไขรายการ");
+        }}
+        fn3txt="แก้ไขรายการ"
       >
         <Board></Board>
       </PageHeader>

@@ -15,15 +15,14 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       // Purple and green play nicely together.
-      main: '#2196f3',
+      main: "#2196f3",
     },
-    
   },
 });
 function App() {
   return (
     <Router>
-      <ThemeProvider>
+      <ThemeProvider theme={theme}>
         <div className="Cardheader"> </div>
         <div className="container" style={{ height: "45em" }}>
           <Switch>
