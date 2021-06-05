@@ -7,6 +7,7 @@ import ModalToPage from "./ModalToPage";
 import pageDetail from "../pageDetail";
 import ModalEditTxt from "./ModalEditTxt";
 import ModalCheckBox from "./ModalCheckBox";
+import ModalEditOrTool from "./ModalEditOrTool";
 export default function CoverageBoard(props) {
   const [open, setOpen] = useState(false);
   const [modalChoice, setModalChoice] = useState("");
@@ -139,10 +140,20 @@ export default function CoverageBoard(props) {
               CheckBoxKey={GenreKey}
             ></ModalCheckBox>
           )}
+          {/* Premise */}
+          {modalChoice == "Premise" && (
+            <ModalCheckBox
+              InputTitle={pageDetail.GenreModal}
+              Choice={GenreChoice}
+              setCheckBoxChoice={setGenreChoice}
+              handleClose={handleClose}
+              CheckBoxKey={GenreKey}
+            ></ModalCheckBox>
+          )}
         </ModalPaper>
       </Modal>
       {/* 1 line = 12 sm split to 4 and 8 */}
-      <Grid item xs={12} sm={4}>
+      <Grid item sm={12} md={4}>
         {/* use PaperCard */}
         <PaperCard
           title="Title"
@@ -153,7 +164,7 @@ export default function CoverageBoard(props) {
           editfn={handleModalTitle}
         ></PaperCard>
       </Grid>
-      <Grid item xs={12} sm={8}>
+      <Grid item sm={12} md={8}>
         {/* ต้องใส่ modal ให้ปุ่มใน PaperCard ยังไงดี ต้องส่ง chidren ไม่ได้ มี2ปุ่ม 2 modal*/}
         <PaperCard
           title="Premise"
@@ -161,11 +172,11 @@ export default function CoverageBoard(props) {
           detailclname="primary"
           height="10em"
           width="100%"
-          AdvanceFunction={handlePremiseTool}
+          editfn={handleModalTitle}
           closeModal={handleClose}
         ></PaperCard>
       </Grid>
-      <Grid item xs={6} sm={8}>
+      <Grid item sm={12} md={8}>
         <PaperCard
           title="Theme"
           detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in"
@@ -174,7 +185,7 @@ export default function CoverageBoard(props) {
           width="100%"
         ></PaperCard>
       </Grid>
-      <Grid item xs={6} sm={4}>
+      <Grid item sm={12} md={4}>
         <PaperCard
           title="Genre"
           detail={GenerateCheckBoxDetail(GenreChoice)}
@@ -184,7 +195,7 @@ export default function CoverageBoard(props) {
           editfn={handleGenreCheckBox}
         ></PaperCard>
       </Grid>
-      <Grid item xs={6} sm={12}>
+      <Grid item sm={12} md={12}>
         <PaperCard
           title="Lock Story Line"
           detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in"
@@ -193,7 +204,7 @@ export default function CoverageBoard(props) {
           width="100%"
         ></PaperCard>
       </Grid>
-      <Grid item xs={6} sm={8}>
+      <Grid item sm={12} md={8}>
         <PaperCard
           title="Lock Line"
           detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in"
@@ -202,7 +213,7 @@ export default function CoverageBoard(props) {
           width="100%"
         ></PaperCard>
       </Grid>
-      <Grid item xs={6} sm={4}>
+      <Grid item sm={12} md={4}>
         <PaperCard
           title="Check Box"
           detail={GenerateCheckBoxDetail(CheckBoxChoice)}
