@@ -3,27 +3,7 @@ import StyledButton from "./StyledButton";
 import TextField from "@material-ui/core/TextField";
 import PageHeader from "./page/PageHeader";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
-const CssTextField = withStyles({
-  root: {
-    "& label.Mui-focused": {
-      color: "var(--primary)",
-    },
-    "& .MuiInput-underline:after": {
-      borderBottomColor: "var(--primary)",
-    },
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        borderColor: "var(--primary)",
-      },
-      "&:hover fieldset": {
-        borderColor: "var(--primary)",
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: "var(--primary)",
-      },
-    },
-  },
-})(TextField);
+import CssTextField from "./CssTextField";
 export default function ModalEditTxt({
   InputTitle,
   setTxt,
@@ -33,16 +13,7 @@ export default function ModalEditTxt({
 }) {
   return (
     <PageHeader data={InputTitle}>
-      <CssTextField
-        placeholder="กรุณาระบข้อความ..."
-        variant="outlined"
-        id="custom-css-outlined-input"
-        style={{ width: "100%" }}
-        multiline={true}
-        rows="10"
-        value={edittxt}
-        onChange={handleChange}
-      />
+      <CssTextField edittxt={edittxt} handleChange={handleChange}/>
 
       <div className="flexend" style={{ marginTop: "1em" }}>
         <StyledButton
