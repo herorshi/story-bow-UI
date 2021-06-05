@@ -89,7 +89,12 @@ export default function CoverageBoard(props) {
   let editTxtProps = { handleClose, handleChange, edittxt };
 
   return (
-    <Grid className="board" container spacing={3}>
+    <Grid
+      className="board"
+      container
+      spacing={3}
+      style={{ margin: "2em 0 0 0", width: "auto" }}
+    >
       {/* Modal */}
       <Modal
         open={open}

@@ -9,5 +9,6 @@ export default withStyles({
     marginLeft: "0.75em",
     textTransform: "none",
     padding: "6px 30px",
+    width: "12em",
   },
 })(Button);

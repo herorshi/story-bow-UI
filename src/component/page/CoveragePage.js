@@ -12,14 +12,13 @@ export default function CoveragePage(props) {
         alert("showvdo");
       }}
     >
-      <Board>
-        <CoverageBoard />
-      </Board>
-      <div className="pageHeader" style={{ marginTop: "1em" }}>
+      <CoverageBoard />
+
+      <div className="pageHeader" style={{ marginTop: "2em" }}>
         <div>
           <StyledButton
             variant="contained"
-            style={{ background: "var(--primary)" }}
+            style={{ background: "var(--primary)", marginLeft: "0" }}
           >
             บันทึก
           </StyledButton>
