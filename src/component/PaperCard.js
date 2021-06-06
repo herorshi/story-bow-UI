@@ -12,19 +12,28 @@ export default function PaperCard(props) {
       height: `${props.height ? props.height : "10em"}`,
       width: `${props.width ? props.width : "auto"}`,
       borderRadius: "0.75em",
+      overflow: "auto",
 
       // "&:hover": {
       //   border: `1px solid var(--primary)`,
       // },
+    },
+    header2: {
+      paddingLeft: "1em",
+      color: `${props.h1color}`,
+    },
+    cardtxt: {
+      overflow: "auto",
+      wordBreak: "break-all",
+      wordWrap: "break-word",
+      paddingLeft: "3em",
     },
   }));
   const classes = useStyles();
   return (
     <Paper className={classes.paper}>
       <div className="pageHeader">
-        <h2 style={{ marginLeft: "1em", color: `${props.h1color}` }}>
-          {props.title}
-        </h2>
+        <h2 className={classes.header2}>{props.title}</h2>
         <h2>
           {/* EditButton */}
           {props.editfn && (
@@ -42,10 +51,15 @@ export default function PaperCard(props) {
           )}
         </h2>
       </div>
-      <p className={`cardtext ${props.detailclname}`}>
-        {props.detail}
+      <p
+        className={`${classes.cardtxt} ${props.detailclname} ${
+          props.detail == "" ? "placeholdertxt" : ""
+        }`}
+      >
+        {props.detail == "" ? "กรุณาระบุข้อความ" : props.detail}
         {props.children}
       </p>
     </Paper>
   );
 }
+//  {props.title} props.editfn props.AdvanceFunction ${props.detailclname}{props.detail} {props.children}
