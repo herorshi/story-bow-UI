@@ -253,7 +253,7 @@ export default function CoverageBoard(props) {
           title="Lock Story Line"
           detail={coverage.LockStoryLine}
           detailclname="primary"
-          height="15em"
+          height="20em"
           width="100%"
           editfn={handleLockStoryLineTool}
           closeModal={handleClose}
