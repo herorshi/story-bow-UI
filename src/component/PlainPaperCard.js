@@ -8,7 +8,7 @@ export default function PlainPaperCard(props) {
       padding: "1em",
       paddingRight: "0",
       marginRight: "1em",
-      height: `${props.height ? props.height : "10em"}`,
+      height: `${props.height ? props.height : "auto"}`,
       width: `${props.width ? props.width : "auto"}`,
       borderRadius: "0.75em",
     },
