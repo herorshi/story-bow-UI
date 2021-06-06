@@ -4,6 +4,7 @@ import pageDetail from "../../pageDetail";
 import Board from "../Board";
 import { Container, Button } from "@material-ui/core";
 import Link from "../CustomLink";
+import StyledButton from "../StyledButton";
 export default function CoveragePage(props) {
   return (
     <>
@@ -16,21 +17,21 @@ export default function CoveragePage(props) {
       <Board></Board>
       <Container
         className="flexend"
-        style={{ display: "flex", marginTop: "1em" }}
+        style={{ display: "flex", marginTop: "1em", padding: "0" }}
       >
         <Link to="/">
-          <Button
+          <StyledButton
             variant="contained"
             color="gray"
             style={{ marginRight: "1em" }}
           >
             Back
-          </Button>
+          </StyledButton>
         </Link>
         <Link to="/PremiseTool/IdeaPremise">
-          <Button variant="contained" color="primary">
+          <StyledButton variant="contained" color="primary">
             Next
-          </Button>
+          </StyledButton>
         </Link>
       </Container>
     </>
