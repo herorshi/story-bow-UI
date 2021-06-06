@@ -36,7 +36,7 @@ export default function CoveragePage(props) {
       <Board>
         <Grid className="board" container spacing={3}>
           {/* 1 line = 12 sm split to 4 and 8 */}
-          <Grid item xs={12} sm={4}>
+          <Grid item sm={12} md={4}>
             {/* use PaperCard */}
             <PaperCard
               title="Title1"
@@ -49,7 +49,7 @@ export default function CoveragePage(props) {
               }}
             ></PaperCard>
           </Grid>
-          <Grid item xs={6} sm={4}>
+          <Grid item sm={12} md={4}>
             <PaperCard
               title="Title2"
               detailclname="primary"
@@ -58,7 +58,7 @@ export default function CoveragePage(props) {
               h1color="var(--primary)"
             ></PaperCard>
           </Grid>
-          <Grid item xs={6} sm={4}>
+          <Grid item sm={12} md={4}>
             <PaperCard
               title="Title3"
               detail="Comedy"
@@ -68,7 +68,7 @@ export default function CoveragePage(props) {
             ></PaperCard>
           </Grid>
           {/* empty row */}
-          <Grid item xs={6} sm={12} style={{ height: "10em" }}></Grid>
+          <Grid item xs={12} sm={12} style={{ height: "10em" }}></Grid>
           {/* Tools Trial */}
           <Grid item xs={6} sm={12}>
             <PageHeader data={pageDetail.ToolsTrial}> </PageHeader>
@@ -76,7 +76,7 @@ export default function CoveragePage(props) {
 
           {/* use PaperCard */}
           {trialtoolsList.map((c, i) => (
-            <Grid item xs={12} sm={4}>
+            <Grid item sm={12} md={4}>
               <Link to={trialtoolsPath[i]} style={{ textDecoration: "none" }}>
                 <PaperCard title={c} height="10em" width="100%"></PaperCard>
               </Link>
