@@ -10,6 +10,7 @@ const MYCssTextField = withStyles({
       borderBottomColor: "var(--primary)",
     },
     "& .MuiOutlinedInput-root": {
+      borderRadius: "1em",
       "& fieldset": {
         borderColor: "var(--primary)",
       },

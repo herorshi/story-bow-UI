@@ -67,10 +67,10 @@ export default function ModalEditOrTool({
           </div>
           <CustomLink to="/PremiseTool">
             <div
-              className="centerverhor"
+              className="centerverhor focusborder"
               style={{
                 backgroundColor: "#f5f5f5",
-                border: `2px solid var(--primary)`,
+                border: `1px solid var(--primary)`,
                 borderRadius: "0.5em",
                 color: "#A0A0A0",
                 height: "7em",
@@ -98,6 +98,7 @@ export default function ModalEditOrTool({
       )}
 
       <CssTextField edittxt={edittxt} handleChange={handleChange} />
+
       <FooterButtonForModal
         handleClose={handleClose}
         edittxt={edittxt}
