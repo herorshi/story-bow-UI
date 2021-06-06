@@ -43,14 +43,18 @@ export default function CoverageBoard(props) {
   const setTitle = (title) => {
     setCoverage({ ...coverage, title });
   };
+  const setLockLine = (LockLine) => {
+    setCoverage({ ...coverage, LockLine });
+  };
   const setPremise = (Premise) => {
     setCoverage({ ...coverage, Premise });
   };
   const setTheme = (Theme) => {
     setCoverage({ ...coverage, Theme });
   };
-  const setLockLine = (LockLine) => {
-    setCoverage({ ...coverage, LockLine });
+
+  const setLockStoryLine = (LockStoryLine) => {
+    setCoverage({ ...coverage, LockStoryLine });
   };
 
   const handleModalTitle = () => {
@@ -75,6 +79,10 @@ export default function CoverageBoard(props) {
     setModalChoice("Theme");
     handleOpen();
   };
+  const handleLockLine = () => {
+    setModalChoice("LockLine");
+    handleOpen();
+  };
 
   const GenerateCheckBoxDetail = (obj) => {
     let keys = Object.keys(obj);
@@ -85,8 +93,11 @@ export default function CoverageBoard(props) {
     setModalChoice("Use Premise Tool");
     handleOpen();
   };
+  const handleLockStoryLineTool = () => {
+    setModalChoice("Lock Story Line");
+    handleOpen();
+  };
   const handleChange = (event) => {
-    console.log(event.target.value);
     setEditTxt(event.target.value);
   };
 
@@ -135,6 +146,14 @@ export default function CoverageBoard(props) {
               {...editTxtProps}
             ></ModalEditTxt>
           )}
+          {/* LockLine */}
+          {modalChoice == "LockLine" && (
+            <ModalEditTxt
+              InputTitle={pageDetail.LockLine}
+              setTxt={setLockLine}
+              {...editTxtProps}
+            ></ModalEditTxt>
+          )}
           {/* CheckBox */}
           {modalChoice == "CheckBox" && (
             <ModalCheckBox
@@ -170,6 +189,15 @@ export default function CoverageBoard(props) {
               InputTitle={pageDetail.ThemeModal}
               setTxt={setTheme}
               toolName="Idea Theme Tool"
+              {...editTxtProps}
+            ></ModalEditOrTool>
+          )}
+          {/* Lock Story Line */}
+          {modalChoice == "Lock Story Line" && (
+            <ModalEditOrTool
+              InputTitle={pageDetail.LockStoryLineModal}
+              setTxt={setLockStoryLine}
+              toolName="Lock Story Line Tool"
               {...editTxtProps}
             ></ModalEditOrTool>
           )}
@@ -223,19 +251,22 @@ export default function CoverageBoard(props) {
       <Grid item sm={12} md={12}>
         <PaperCard
           title="Lock Story Line"
-          detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in"
+          detail={coverage.LockStoryLine}
           detailclname="primary"
           height="15em"
           width="100%"
+          editfn={handleLockStoryLineTool}
+          closeModal={handleClose}
         ></PaperCard>
       </Grid>
       <Grid item sm={12} md={8}>
         <PaperCard
           title="Lock Line"
-          detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in"
+          detail={coverage.LockLine}
           detailclname="primary"
           height="10em"
           width="100%"
+          editfn={handleLockLine}
         ></PaperCard>
       </Grid>
       <Grid item sm={12} md={4}>

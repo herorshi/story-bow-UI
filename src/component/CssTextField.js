@@ -24,9 +24,10 @@ const MYCssTextField = withStyles({
   },
 })(TextField);
 export default function CssTextField({ edittxt, handleChange }) {
+
   return (
     <MYCssTextField
-      placeholder="กรุณาระบข้อความ..."
+      placeholder="กรุณาระบุข้อความ..."
       variant="outlined"
       id="custom-css-outlined-input"
       style={{ width: "100%" }}

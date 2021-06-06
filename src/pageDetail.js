@@ -48,4 +48,14 @@ export default {
     detail:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in, vestibulum pharetra massa.",
   },
+  LockStoryLineModal: {
+    title: "Lock Story Line",
+    detail:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in, vestibulum pharetra massa.",
+  },
+  LockLine: {
+    title: "Lock Line",
+    detail:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in, vestibulum pharetra massa.",
+  },
 };

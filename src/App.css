@@ -46,6 +46,8 @@ h1 {
 }
 
 .cardtext {
+  overflow: auto;
+  word-wrap: break-word;
   padding-left: 2em;
 }
 .flexend {
