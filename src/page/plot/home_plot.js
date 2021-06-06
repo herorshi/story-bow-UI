@@ -24,7 +24,7 @@ class HomePlot extends Component {
                               fontSize: '20px',
                             },
                         }}                        
-                        value={this.state.value} maxValue={1}  />
+                        value={this.state.value} maxValue={1}/>
                     </div>
                         <h3 className="font-weight-bold">Plot</h3>
                     </div>
@@ -74,25 +74,28 @@ class HomePlot extends Component {
             <div className="card bg-card-board mb-5  border-0 ">
               <div className="card-body ">
                   
-                  <div className="mb-5">
+                  <div className="mb-5 position-relative">
+                    <i  style={{"color":"#cbcbcb"}} class="fas fa-pen a-click position-absolute position-icon"></i>
                     <div className="act font-weight-bold text-white bg-blue p-1 pl-3">
                         Act 1
                     </div>
                     <textarea   name="" id="" cols="30" rows="5" className="form-control card-main" placeholder="กรุณาระบุ..."  ></textarea>
                   </div>
 
-                  <div className="mb-5">
+                  <div className="mb-5 position-relative ">
+                    <i  style={{"color":"#cbcbcb"}} class="fas fa-pen a-click position-absolute position-icon"></i>
                     <div className="act font-weight-bold text-white bg-blue p-1 pl-3">
                         Act 2
                     </div>
                     <textarea name="" id="" cols="30" rows="10" className="form-control card-main" placeholder="กรุณาระบุ..." ></textarea>
                   </div>
 
-                  <div className="mb-5">
+                  <div className="mb-5 position-relative">
+                    <i style={{"color":"#cbcbcb"}} class="fas fa-pen a-click position-absolute position-icon"></i>
                     <div className="act font-weight-bold text-white bg-blue p-1 pl-3">
                         Act 3
                     </div>
-                    <textarea name="" id="" cols="30" rows="5" className="form-control card-main" placeholder="กรุณาระบุ..." ></textarea>
+                    <textarea name="" id="" cols="30" rows="8" className="form-control card-main" placeholder="กรุณาระบุ..." ></textarea>
                   </div>
 
               </div>
@@ -115,9 +118,7 @@ class HomePlot extends Component {
                         เสร็จสิ้น
                     </button>
                 </div>
-
             </div>
-
         </div>
       </React.Fragment>
     );

@@ -11,6 +11,13 @@
 .mh-150{
     min-height: 150px;
 }
+.mh-120{
+    min-height: 120px;
+}
+
+.mh-200{
+    min-height: 200px;
+}
 
 .mh-250{
     min-height: 250px;
@@ -18,6 +25,9 @@
 
 .mh-80{
     min-height: 80px;
+}
+.mh-100{
+    min-height: 100px;
 }
 
 .mw-180{
@@ -73,6 +83,9 @@
 .color-header-board{
     color: #4b9cdc!important;
 }
+.color-blue-light{
+    background: #e0effa;
+}
 
 .a-click{
     cursor: pointer;
@@ -87,4 +100,58 @@
 
 .shasow_card{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+.line_gray{
+    height: 5px;
+    background: #e2e2e2;
+}
+.valid_premise{
+    width: 40px;
+    height:40px;
+    background: #2ea2ff;
+    border-radius:80px;
+}
+
+.bd-8{
+    border-radius:8px;
+}
+.color_text_pm{
+    color: #b4b4b4;
+}
+.color_uncheck{
+    background: #aaaaaa;
+    width: 40px;
+    height:40px;
+    border-radius:80px;
+}
+
+.color_text_theme{
+    color: #bbbbbb;
+}
+.text_pov_plus{
+    color:#d5edca;
+}
+.box-positive{
+    height: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
+    /* background: blue; */
+}
+
+.color_uncheck_small {
+    background: #aaaaaa;
+    width: 30px;
+    height: 30px;
+    border-radius: 80px;
+}
+.shadow-bt{
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.my-box{
+    background:#dedede;
+}
+
+.color_define_theme{
+    color: #bcbcbc;
 }
