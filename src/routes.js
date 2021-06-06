@@ -7,6 +7,10 @@ import HomePlot from './page/plot/home_plot'
 import PlotSuccess from './page/plot/plot_success'
 import HomePremise from './page/premise/home_premise'
 import HomeTheme from './page/theme/home_theme'
+import LockStoryLine from './page/lock_story_line/lock_story_line'
+import Character from './page/character/home_character'
+import CharacterProcess from './page/character/character_process'
+import HomeStoryBowL from './page/story-bowl/home-story-bowl'
 function Routes() {
     return (
         <Router>
@@ -28,6 +32,18 @@ function Routes() {
                 </Route>   
                 <Route  path={"/theme"}>
                     <HomeTheme/>
+                </Route>
+                <Route  path={"/lock_story_line"}>
+                    <LockStoryLine/>
+                </Route>
+                <Route  path={"/character"}>
+                    <Character/>
+                </Route>
+                <Route  path={"/character_process"}>
+                    <CharacterProcess/>
+                </Route>
+                <Route  path={"/story_bowl"}>
+                    <HomeStoryBowL/>
                 </Route>                
             </Switch>
         </Router>
