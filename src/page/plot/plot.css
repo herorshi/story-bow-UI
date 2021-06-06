@@ -1,0 +1,10 @@
+
+.act{
+    width: 150px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card-main{
+    border-top-left-radius: 0!important;
+    border-top-right-radius: 0!important;
+}

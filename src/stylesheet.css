@@ -1,0 +1,90 @@
+#header_blue{
+    height: 50px;
+    background: #2d8cd6;
+}
+.bg-blue{
+    background: #2d8cd6;
+}
+.mw-150{
+    min-width: 150px;
+}
+.mh-150{
+    min-height: 150px;
+}
+
+.mh-250{
+    min-height: 250px;
+}
+
+.mh-80{
+    min-height: 80px;
+}
+
+.mw-180{
+    min-width: 180px;
+}
+.content{
+    width: 80%;
+}
+.share-top{
+    background: #aaaaaa;
+}
+.share-top-right{
+    background: #f44481;
+}
+
+.bg-card-board{
+    background: #f2f2f2!important;
+}
+.bg-bow{
+    background: #ec9441!important;
+}
+
+.card-project{
+    min-height: 150px!important;
+}
+
+.card-project-long{
+    min-height: 250px!important;
+}
+
+.font-18{
+    font-size: 18px;
+}
+.font-15{
+    font-size: 15px;
+}
+.font-20{
+    font-size:20px;
+}
+.font-25{
+    font-size: 25px;
+}
+.font-30{
+    font-size:30px;
+}
+.font-40{
+    font-size: 40px;
+}
+.color-gray{
+    color:#cbcbcb!important;
+}
+
+.color-header-board{
+    color: #4b9cdc!important;
+}
+
+.a-click{
+    cursor: pointer;
+}
+.mt-100{
+    margin-top: 100px;
+}
+
+.op-harf{
+    opacity: 0.5;
+}
+
+.shasow_card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}

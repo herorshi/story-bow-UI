@@ -1,0 +1,17 @@
+
+ 
+ 
+ 
+ .CircularProgressbar .CircularProgressbar-path{
+     stroke: #4b9cdc!important;
+     /* border-radius:80px; */
+ }
+ .CircularProgressbar-text {
+    fill: black!important;
+    /* font-size: 20px; */
+  }
+ 
+ /* .CircularProgressbar-text{
+     font-size: 20px!important;
+     fill:#4b9cdc!important
+ } */
