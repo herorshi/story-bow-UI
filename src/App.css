@@ -55,3 +55,9 @@ h1 {
 .primarytxt {
   color: var(--primary);
 }
+focusborder {
+  border: 1px solid var(--primary);
+}
+focusborder:hover {
+  border: 2px solid var(--primary);
+}
