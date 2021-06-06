@@ -43,4 +43,9 @@ export default {
     detail:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in, vestibulum pharetra massa.",
   },
+  ThemeModal: {
+    title: "Theme",
+    detail:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in, vestibulum pharetra massa.",
+  },
 };

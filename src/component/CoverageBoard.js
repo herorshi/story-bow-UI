@@ -46,6 +46,9 @@ export default function CoverageBoard(props) {
   const setPremise = (Premise) => {
     setCoverage({ ...coverage, Premise });
   };
+  const setTheme = (Theme) => {
+    setCoverage({ ...coverage, Theme });
+  };
   const setLockLine = (LockLine) => {
     setCoverage({ ...coverage, LockLine });
   };
@@ -66,6 +69,10 @@ export default function CoverageBoard(props) {
 
   const handlePremise = () => {
     setModalChoice("Premise");
+    handleOpen();
+  };
+  const handleTheme = () => {
+    setModalChoice("Theme");
     handleOpen();
   };
 
@@ -157,6 +164,15 @@ export default function CoverageBoard(props) {
               {...editTxtProps}
             ></ModalEditOrTool>
           )}
+          {/* Theme */}
+          {modalChoice == "Theme" && (
+            <ModalEditOrTool
+              InputTitle={pageDetail.ThemeModal}
+              setTxt={setTheme}
+              toolName="Idea Theme Tool"
+              {...editTxtProps}
+            ></ModalEditOrTool>
+          )}
         </ModalPaper>
       </Modal>
       {/* 1 line = 12 sm split to 4 and 8 */}
@@ -186,10 +202,12 @@ export default function CoverageBoard(props) {
       <Grid item sm={12} md={8}>
         <PaperCard
           title="Theme"
-          detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ante, venenatis vitae nunc in"
+          detail={coverage.Theme}
           detailclname="primary"
           height="10em"
           width="100%"
+          editfn={handleTheme}
+          closeModal={handleClose}
         ></PaperCard>
       </Grid>
       <Grid item sm={12} md={4}>
