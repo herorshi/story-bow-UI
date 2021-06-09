@@ -92,15 +92,18 @@ class Character extends Component {
                     </div>
 
                     <div className="col-md-4">
+
                         <div class="card mh-180 border-0 bd-8" >
-                            <div class="card-body">
-                                <div className="text-center mt-2">
-                                    <i class="fas fa-plus color-plus" style={{fontSize:"50px"}}></i>
+                            <Link to="/character_process">
+                                <div class="card-body">
+                                    <div className="text-center mt-2">
+                                        <i class="fas fa-plus color-plus" style={{fontSize:"50px"}}></i>
+                                    </div>
+                                    <div className=" mt-3 text-center font-30 color-plus font-weight-bold ">
+                                        สร้าง Character ใหม่
+                                    </div>
                                 </div>
-                                <div className=" mt-3 text-center font-30 color-plus font-weight-bold ">
-                                    สร้าง Character ใหม่
-                                </div>
-                            </div>
+                            </Link>
                         </div>
                     </div>
 

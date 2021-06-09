@@ -1,19 +1,27 @@
 import React,{Component} from 'react';
 import { Route,Link,withRouter } from 'react-router-dom'
+import rn from '../../module-function/module-default'
+// import Popup from '../component/popup'
 import './board.css'
 class BoardHome extends Component {
   state = {
-      txt:"     "
+      txt:""
   };
+
+  
   render() {
     return (
       <React.Fragment> 
         <div id="header_blue"></div>
         <div className="content mx-auto mt-5 ">
             <div className="d-flex">
+            {/* <button onClick={()=>rn.show_popup()}  className="btn btn-primary">OK</button> */}
+            {/* <button onClick={()=>rn.start_module()} className="btn btn-primary">TEST</button> */}
+
                 <span className="mr-auto">
                     <h3 className="font-weight-bold">Board</h3>
                 </span>
+                
                 <div>
                     <button style={{"minWidth":"150px"}} className="text-white btn share-top mr-2">share</button>
                     <button style={{"minWidth":"200px"}} className="text-white btn share-top-right">รับชมวิดีโอสอน</button>
@@ -46,18 +54,20 @@ class BoardHome extends Component {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                     <div className="col">
-                        <div class="card card-project border-0">
-                            <div class="card-body a-click">
-                                <p className=" text-center mt-2 color-gray">
-                                    <i class="fas fa-plus font-40"></i>
-                                </p>
-                                <div className="font-weight-bold font-20  color-gray text-center">
-                                    สร้าง Project ใหม่
-                                </div>
-                            </div>
-                        </div>
+                        <Link to="/Coverage" replace >
+                          <div class="card card-project border-0">
+                              <div class="card-body a-click">
+                                  <p className=" text-center mt-2 color-gray">
+                                      <i class="fas fa-plus font-40"></i>
+                                  </p>
+                                  <div className="font-weight-bold font-20  color-gray text-center">
+                                      สร้าง Project ใหม่
+                                  </div>
+                              </div>
+                          </div>
+                        </Link>
                     </div>
                     <div className="col"></div>
                 </div>

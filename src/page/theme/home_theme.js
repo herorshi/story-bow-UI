@@ -88,7 +88,7 @@ class HomeTheme extends Component {
                                                 <div  style={{"visibility": "hidden"}} className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-check text-white "></i>
                                                 </div>
-                                                <div className="mt-3 font-20 font-weight-bold text_pov_plus">  กรุณาระบุข้อความ...</div>
+                                                <div className="mt-3 font-20 font-weight-bold text_pov_plus pl-3 ">  กรุณาระบุข้อความ...</div>
                                             </div>
                                         </div>
                                     </div>
@@ -112,7 +112,7 @@ class HomeTheme extends Component {
                                                 <div  style={{"visibility": "hidden"}} className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-check text-white "></i>
                                                 </div>
-                                                <div className="mt-3 font-20 font-weight-bold text_pov_plus"> กรุณาระบุข้อความ...</div>
+                                                <div className="mt-3 font-20 font-weight-bold text_pov_plus pl-3 "> กรุณาระบุข้อความ...</div>
                                             </div>
                                         </div>
                                     </div>
@@ -136,7 +136,7 @@ class HomeTheme extends Component {
                                                 <div  style={{"visibility": "hidden"}} className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-check text-white "></i>
                                                 </div>
-                                                <div className="mt-3 font-20 font-weight-bold text_pov_plus">  กรุณาระบุข้อความ</div>
+                                                <div className=" pl-3 mt-3 font-20 font-weight-bold text_pov_plus">  กรุณาระบุข้อความ...</div>
                                             </div>
                                         </div>
                                     </div>
@@ -160,7 +160,7 @@ class HomeTheme extends Component {
                                                 <div  style={{"visibility": "hidden"}} className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-check text-white "></i>
                                                 </div>
-                                                <div className="mt-3 font-20 font-weight-bold text_pov_plus">  กรุณาระบุข้อความ</div>
+                                                <div className=" pl-3 mt-3 font-20 font-weight-bold text_pov_plus">  กรุณาระบุข้อความ...</div>
                                             </div>
                                         </div>
                                     </div>
@@ -184,7 +184,7 @@ class HomeTheme extends Component {
                                                 <div  style={{"visibility": "hidden"}} className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-check text-white "></i>
                                                 </div>
-                                                <div className="mt-3 font-20 font-weight-bold text_pov_plus">  กรุณาระบุข้อความ</div>
+                                                <div className=" pl-3 mt-3 font-20 font-weight-bold text_pov_plus">  กรุณาระบุข้อความ...</div>
                                             </div>
                                         </div>
                                     </div>
@@ -208,7 +208,7 @@ class HomeTheme extends Component {
                                                 <div  style={{"visibility": "hidden"}} className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-check text-white "></i>
                                                 </div>
-                                                <div className="mt-3 font-20 font-weight-bold text_pov_plus">  กรุณาระบุข้อความ</div>
+                                                <div className=" pl-3 mt-3 font-20 font-weight-bold text_pov_plus">  กรุณาระบุข้อความ...</div>
                                             </div>
                                         </div>
                                     </div>
@@ -242,7 +242,7 @@ class HomeTheme extends Component {
                                                 <div  style={{"visibility": "hidden"}} className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-check text-white "></i>
                                                 </div>
-                                                <div className="mt-3 font-20 font-weight-bold color-header-board">  นักเรียน</div>
+                                                <div className=" pl-3 mt-3 font-20 font-weight-bold color-header-board">  นักเรียน</div>
                                             </div>
                                         </div>
                                     </div>
@@ -266,7 +266,7 @@ class HomeTheme extends Component {
                                                 <div  style={{"visibility": "hidden"}} className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-check text-white "></i>
                                                 </div>
-                                                <div className="mt-3 font-20 font-weight-bold color-header-board"> มีความรัก </div>
+                                                <div className=" pl-3 mt-3 font-20 font-weight-bold color-header-board"> มีความรัก </div>
                                             </div>
                                         </div>
                                     </div>
@@ -290,7 +290,7 @@ class HomeTheme extends Component {
                                                 <div  style={{"visibility": "hidden"}} className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-check text-white "></i>
                                                 </div>
-                                                <div className="mt-3 font-20 font-weight-bold color-header-board">  คุณครู </div>
+                                                <div className=" pl-3 mt-3 font-20 font-weight-bold color-header-board">  คุณครู </div>
                                             </div>
                                         </div>
                                     </div>
@@ -310,7 +310,7 @@ class HomeTheme extends Component {
                                                 <div className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-check text-white "></i>
                                                 </div>
-                                                <div className="font-20 font-weight-bold"> Element </div>
+                                                <div className="font-20 font-weight-bold"> Negative POV </div>
                                             </div>
                                             <i  style={{"color":"#cbcbcb"}} class="fas fa-pen a-click"></i>
                                         </div>
@@ -319,7 +319,7 @@ class HomeTheme extends Component {
                                                 <div  style={{"visibility": "hidden"}} className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-check text-white "></i>
                                                 </div>
-                                                <div className="mt-3 font-20 font-weight-bold color-header-board">  นักเรียน</div>
+                                                <div className=" share-top-right-text pl-3 op-harf mt-3 font-20 font-weight-bold ">  กรุณาระบุข้อความ </div>
                                             </div>
                                         </div>
                                     </div>
@@ -334,7 +334,7 @@ class HomeTheme extends Component {
                                                 <div className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-check text-white "></i>
                                                 </div>
-                                                <div className="font-20 font-weight-bold"> Element </div>
+                                                <div className="font-20 font-weight-bold"> Negative POV </div>
                                             </div>
                                             <i  style={{"color":"#cbcbcb"}} class="fas fa-pen a-click"></i>
                                         </div>
@@ -343,7 +343,7 @@ class HomeTheme extends Component {
                                                 <div  style={{"visibility": "hidden"}} className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-check text-white "></i>
                                                 </div>
-                                                <div className="mt-3 font-20 font-weight-bold color-header-board"> มีความรัก </div>
+                                                <div className=" share-top-right-text pl-3 op-harf mt-3 font-20 font-weight-bold ">  กรุณาระบุข้อความ </div>
                                             </div>
                                         </div>
                                     </div>
@@ -358,7 +358,7 @@ class HomeTheme extends Component {
                                                 <div className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-check text-white "></i>
                                                 </div>
-                                                <div className="font-20 font-weight-bold"> Element </div>
+                                                <div className="font-20 font-weight-bold"> Negative POV </div>
                                             </div>
                                             <i  style={{"color":"#cbcbcb"}} class="fas fa-pen a-click"></i>
                                         </div>
@@ -367,7 +367,7 @@ class HomeTheme extends Component {
                                                 <div  style={{"visibility": "hidden"}} className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-check text-white "></i>
                                                 </div>
-                                                <div className="mt-3 font-20 font-weight-bold color-header-board">  คุณครู </div>
+                                                <div className=" share-top-right-text pl-3 op-harf mt-3 font-20 font-weight-bold ">  กรุณาระบุข้อความ </div>
                                             </div>
                                         </div>
                                     </div>
@@ -383,7 +383,7 @@ class HomeTheme extends Component {
                                                 <div className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-check text-white "></i>
                                                 </div>
-                                                <div className="font-20 font-weight-bold"> Element </div>
+                                                <div className="font-20 font-weight-bold"> Negative POV </div>
                                             </div>
                                             <i  style={{"color":"#cbcbcb"}} class="fas fa-pen a-click"></i>
                                         </div>
@@ -392,33 +392,7 @@ class HomeTheme extends Component {
                                                 <div  style={{"visibility": "hidden"}} className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-check text-white "></i>
                                                 </div>
-                                                <div className="mt-3 font-20 font-weight-bold color-header-board">  คุณครู </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div className="col-md-4 my-3 ">
-                                <div class="card mh-120 border-0  bd-8" >
-                                    <div class="card-body">
-                                        <div className="d-flex align-items-center justify-content-between">
-                                            <div className="d-flex align-items-center">
-                                                <div className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
-                                                    <i class="fas fa-check text-white "></i>
-                                                </div>
-                                                <div className="font-20 font-weight-bold"> Element </div>
-                                            </div>
-                                            <i  style={{"color":"#cbcbcb"}} class="fas fa-pen a-click"></i>
-                                        </div>
-                                        <div className="d-flex align-items-center justify-content-between">
-                                            <div className="d-flex align-items-center">
-                                                <div  style={{"visibility": "hidden"}} className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
-                                                    <i class="fas fa-check text-white "></i>
-                                                </div>
-                                                <div className="mt-3 font-20 font-weight-bold color-header-board">  คุณครู </div>
+                                                <div className=" share-top-right-text pl-3 op-harf mt-3 font-20 font-weight-bold ">  กรุณาระบุข้อความ </div>
                                             </div>
                                         </div>
                                     </div>
@@ -435,7 +409,7 @@ class HomeTheme extends Component {
                                                 <div className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-check text-white "></i>
                                                 </div>
-                                                <div className="font-20 font-weight-bold"> Element </div>
+                                                <div className="font-20 font-weight-bold"> Negative POV </div>
                                             </div>
                                             <i  style={{"color":"#cbcbcb"}} class="fas fa-pen a-click"></i>
                                         </div>
@@ -444,7 +418,33 @@ class HomeTheme extends Component {
                                                 <div  style={{"visibility": "hidden"}} className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-check text-white "></i>
                                                 </div>
-                                                <div className="mt-3 font-20 font-weight-bold color-header-board">  คุณครู </div>
+                                                <div className=" share-top-right-text pl-3 op-harf mt-3 font-20 font-weight-bold ">  กรุณาระบุข้อความ </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div className="col-md-4 my-3 ">
+                                <div class="card mh-120 border-0  bd-8" >
+                                    <div class="card-body">
+                                        <div className="d-flex align-items-center justify-content-between">
+                                            <div className="d-flex align-items-center">
+                                                <div className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-check text-white "></i>
+                                                </div>
+                                                <div className="font-20 font-weight-bold"> Negative POV </div>
+                                            </div>
+                                            <i  style={{"color":"#cbcbcb"}} class="fas fa-pen a-click"></i>
+                                        </div>
+                                        <div className="d-flex align-items-center justify-content-between">
+                                            <div className="d-flex align-items-center">
+                                                <div  style={{"visibility": "hidden"}} className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-check text-white "></i>
+                                                </div>
+                                                <div className=" share-top-right-text pl-3 op-harf mt-3 font-20 font-weight-bold ">  กรุณาระบุข้อความ </div>
                                             </div>
                                         </div>
                                     </div>
@@ -507,12 +507,16 @@ class HomeTheme extends Component {
             </div>
             {/* color-header-board op-harf */}
             <div className="text-right mb-5">
-                <button className="btn text-white share-top mw-150 font-weight-bold  mr-2 ">
-                    ย้อนกลับ
-                </button>
-                <button className="btn text-white   bg-blue mw-150 font-weight-bold">
-                    ยืนยันรายการ
-                </button>
+                <Link to="/coverage">
+                    <button className="btn text-white share-top mw-150 font-weight-bold  mr-2 ">
+                        ย้อนกลับ
+                    </button>
+                </Link>
+                <Link to="/coverage">
+                    <button className="btn text-white   bg-blue mw-150 font-weight-bold">
+                        ยืนยันรายการ
+                    </button>
+                </Link>
             </div>
 
 

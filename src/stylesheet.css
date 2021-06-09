@@ -60,7 +60,9 @@
 .share-top-right{
     background: #f44481;
 }
-
+.share-top-right-text{
+    color: #f44481!important
+}
 .bg-card-board{
     background: #f2f2f2!important;
 }
@@ -136,11 +138,19 @@
     border-radius:80px;  
 }
 
+.valid_premise{
+    width: 30px;
+    height:30px;
+    background: #2ea2ff;
+    border-radius:80px;  
+}
+
 
 
 .bd-8{
     border-radius:8px;
 }
+
 .color_text_pm{
     color: #b4b4b4;
 }
@@ -285,3 +295,95 @@
 }
 
 
+
+.act{
+    /* width: 150px; */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.top-rd-0{
+    border-top-left-radius: 0!important;
+    border-top-right-radius: 0!important;
+}
+
+
+.t1{
+    transition: 0.5s;
+}
+
+.card-back-drop{
+    width: 40%;
+    /* margin-top: 5%; */
+    opacity:0;
+}
+.backdrop{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    transition: 0.5s;
+    animation-duration: 0.5s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        background: rgba(0, 0, 0, 0.1);;
+    }
+  
+    to {
+        background: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+
+
+.op1{
+    opacity:1;
+}
+
+.tool_color{
+    top: 0;
+    left: 0;
+    width: calc(100% + 10px) !important;
+}
+.border-blue{
+    border: 1px solid #2ea2ff;
+    background: #2ea2ff;
+}
+.bd-blue{
+    border: 1px solid #2ea2ff;
+}
+.bd-gray{
+    /* border: #e6e8eb!important; */
+    color: #c3c3c3;
+    border:  1px solid #e6e8eb!important;
+}
+.active-premise{
+    color: #2ea2ff;
+    border:  1px solid #2ea2ff!important;
+}
+
+textarea::placeholder {
+    color: #2ea2ff;
+}
+.card-idea-premise{
+    background: #fafafa;
+    min-height: 200px;
+}
+#tag-a{
+    color: black!important;
+}
+
+a,
+a:focus,
+a:hover,
+a:visited,
+a:link
+{
+    text-decoration: none;
+}
+.bg-premise-txt{
+    background: #efefef;
+}

@@ -107,15 +107,15 @@ class LockStoryLine extends Component {
                         <div className="circle_line"></div>
                     </div>
                     <div className="col-md-11">
-                        <div className="  tab_story_map tab_story tl-radius  p-1 font-weight-bold pl-3  d-inline-block  ">
-                            <div className="d-flex  pr-2 ">
-                                <div className="span mr-auto">
-                                    Character's Maps&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <div className="  tab_story_map tab_story tl-radius  p-1 font-weight-bold pl-3  d-inline-block  ">                          
+                                <div className="d-flex  pr-2 text-white ">
+                                    <div className="span mr-auto">
+                                        Character's Maps&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                    <div className=" d-inline span ml-3 text-white  ">
+                                        <i   class="fas fa-pen a-click"></i>
+                                    </div>
                                 </div>
-                                <div className=" d-inline span ml-3 text-white  ">
-                                    <i   class="fas fa-pen a-click"></i>
-                                </div>
-                            </div>
                         </div>
                         <div className="card mh-120 border-0 bd-8" >
                             <div class="card-body">

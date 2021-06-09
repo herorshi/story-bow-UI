@@ -85,3 +85,24 @@
     left: 50%;
     transform:  translate(-50%,-50%);
 }
+
+.bd-radius-10{
+    border-radius:10px;
+}
+
+textarea.bd-blue{
+    border-color: #94cfff ;
+}
+ textarea.bd-blue:focus
+
+ {
+    border-color: #94cfff!important ;
+    outline: none !important;
+}
+
+textarea.bd-blue:active{
+    border-color: #94cfff!important ;
+}
+textarea.bd-blue:focus-visible{
+    border-color: #94cfff!important ;
+}

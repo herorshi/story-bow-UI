@@ -380,8 +380,12 @@ class CharacterProcess extends Component {
                 </div>
 
                 <div className="d-inline">
-                  <button className="btn mw-150 text-white share-top mr-2">ย้อนกลับ</button>
-                  <button className="btn mw-150 text-white share-top-right mr-2">ยืนยันรายการ</button>
+                  <Link to="/character">
+                    <button className="btn mw-150 text-white share-top mr-2">ย้อนกลับ</button>
+                  </Link>
+                  <Link to="/lock_story_line">
+                    <button className="btn mw-150 text-white share-top-right mr-2">ยืนยันรายการ</button>  
+                  </Link>
                 </div>
 
               </div>

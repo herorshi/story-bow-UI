@@ -111,12 +111,16 @@ class HomePlot extends Component {
                     </button>
                 </div>
                 <div className="d-inline">
-                    <button className="btn share-top mw-180 text-white font-weight-bold  mr-2 ">
-                        ย้อนกลับ
-                    </button>
-                    <button className="btn  bg-blue mw-180 text-white font-weight-bold  mr-2 ">
-                        เสร็จสิ้น
-                    </button>
+                    <Link to="/coverage">
+                        <button className="btn share-top mw-180 text-white font-weight-bold  mr-2 ">
+                            ย้อนกลับ
+                        </button>
+                    </Link>
+                    <Link to="/plot_success">
+                        <button className="btn  bg-blue mw-180 text-white font-weight-bold  mr-2 ">
+                            เสร็จสิ้น
+                        </button>                      
+                    </Link>
                 </div>
             </div>
         </div>

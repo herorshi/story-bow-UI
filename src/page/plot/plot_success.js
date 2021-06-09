@@ -192,12 +192,17 @@ class PlotSuccess extends Component {
                     </button>
                 </div>
                 <div className="d-inline">
-                    <button className="btn share-top mw-180 text-white font-weight-bold  mr-2 ">
-                        ย้อนกลับ
-                    </button>
-                    <button className="btn  bg-blue mw-180 text-white font-weight-bold  mr-2 ">
-                        เสร็จสิ้น
-                    </button>
+                  
+                    <Link to="/plot">
+                      <button className="btn share-top mw-180 text-white font-weight-bold  mr-2 ">
+                          ย้อนกลับ
+                      </button>
+                    </Link>
+                    <Link to="/board">
+                      <button className="btn  bg-blue mw-180 text-white font-weight-bold  mr-2 ">
+                          เสร็จสิ้น
+                      </button>
+                    </Link>
                 </div>
             </div>
         </div>

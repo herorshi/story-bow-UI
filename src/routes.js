@@ -11,6 +11,7 @@ import LockStoryLine from './page/lock_story_line/lock_story_line'
 import Character from './page/character/home_character'
 import CharacterProcess from './page/character/character_process'
 import HomeStoryBowL from './page/story-bowl/home-story-bowl'
+import IdeaPremise from './page/premise/idea_premise'
 function Routes() {
     return (
         <Router>
@@ -29,6 +30,9 @@ function Routes() {
                 </Route>   
                 <Route  path={"/premise"}>
                     <HomePremise/>
+                </Route>   
+                <Route  path={"/idea-premise"}>
+                    <IdeaPremise/>
                 </Route>   
                 <Route  path={"/theme"}>
                     <HomeTheme/>

@@ -1,4 +1,4 @@
-import CONS from "../constants/index";
+import CONS from "../global-variable";
 import Fnc from './Fnc'
 import Alert from './alert'
 import axios from "axios";
@@ -963,5 +963,30 @@ const ReuseNormal = {
     : (str.search("www.") !== -1  ? str.replace("www.", "http://") :  "http://"+str)
     return str
   },
+  show_popup (str){
+    let back_drop = document.getElementById(str)
+    back_drop.classList.add('backdrop');
+    back_drop.classList.remove('d-none');
+    document.getElementById('card-popup-'+str).classList.add('card-back-drop');
+    setTimeout(() => {
+      document.getElementById('card-popup-'+str).style.opacity = 1;  
+      document.getElementById('card-popup-'+str).style.marginTop = "5%";  
+      document.getElementById('card-popup-'+str).style.marginBottom = "5%"; 
+    }, 100);     
+    document.getElementsByTagName("BODY")[0].style.overflow = "hidden"  ;
+
+
+  },
+  hide_popup(str){
+    document.getElementById('card-popup-'+str).style.opacity = 0;
+    document.getElementById('card-popup-'+str).style.marginTop = "0";
+    document.getElementById('card-popup-'+str).style.marginBottom = "0"; 
+    setTimeout(() => {
+      let back_drop = document.getElementById(str)
+      back_drop.classList.remove('backdrop');
+      back_drop.classList.add('d-none');
+      document.getElementsByTagName("BODY")[0].style.overflow = "visible"  ;
+    }, 500);
+  }
 }
 export default ReuseNormal;
