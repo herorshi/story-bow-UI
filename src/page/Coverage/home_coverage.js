@@ -55,7 +55,7 @@ class Coverage extends Component {
           <div></div>
           <div>
             <h3>Title</h3>
-            <div className="mt-3 le-3">
+            <div className="mt-3 pl-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eaque aspernatur dicta eveniet obcaecati saepe distinctio nostrum, minus consequuntur natus, reprehenderit voluptate quas deserunt eum totam? Maiores quibusdam laboriosam perferendis.
             </div>
             <div className="mt-3">
@@ -75,7 +75,7 @@ class Coverage extends Component {
           <div></div>
           <div>
             <h3>Lock line</h3>
-            <div className="mt-3 le-3">
+            <div className="mt-3 pl-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eaque aspernatur dicta eveniet obcaecati saepe distinctio nostrum, minus consequuntur natus, reprehenderit voluptate quas deserunt eum totam? Maiores quibusdam laboriosam perferendis.
             </div>
             <div className="mt-3">
@@ -99,7 +99,7 @@ class Coverage extends Component {
           <div></div>
           <div>
             <h3>Genre</h3>
-            <div className="mt-3 le-3">
+            <div className="mt-3 pl-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eaque aspernatur dicta eveniet obcaecati saepe distinctio nostrum, minus consequuntur natus, reprehenderit voluptate quas deserunt eum totam? Maiores quibusdam laboriosam perferendis.
             </div>
             <div className="mt-3">
@@ -173,7 +173,7 @@ class Coverage extends Component {
           <div></div>
           <div>
             <h3>Check Box</h3>
-            <div className="mt-3 le-3">
+            <div className="mt-3 pl-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eaque aspernatur dicta eveniet obcaecati saepe distinctio nostrum, minus consequuntur natus, reprehenderit voluptate quas deserunt eum totam? Maiores quibusdam laboriosam perferendis.
             </div>
             <div className="mt-3">
@@ -248,7 +248,7 @@ class Coverage extends Component {
           <div></div>
           <div>
             <h3>Premise</h3>
-            <div className="mt-3 le-3">
+            <div className="mt-3 pl-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eaque aspernatur dicta eveniet obcaecati saepe distinctio nostrum, minus consequuntur natus, reprehenderit voluptate quas deserunt eum totam? Maiores quibusdam laboriosam perferendis.
             </div>
                 <div className="row my-3 ">
@@ -283,15 +283,17 @@ class Coverage extends Component {
                         </div>
                         <div className="font-weight-bold font-18 ">  Premise (Idea Premise Tools) </div>
                     </div>
-
-                    <div className=" a-click text-center  bd-8 mt-3 w-100 idea-premise card-idea-premise active-premise">
-                        <div  className="mt-5">
-                            <i class="fas fa-plus "  style={{fontSize:"60px",color:"#d1d1d1"}} ></i>
+                    
+                    <Link to="/idea-premise">
+                        <div className=" a-click text-center  bd-8 mt-3 w-100 idea-premise card-idea-premise active-premise">
+                            <div  className="mt-5">
+                                <i class="fas fa-plus "  style={{fontSize:"60px",color:"#d1d1d1"}} ></i>
+                            </div>
+                            <span style={{color:"#d1d1d1"}}  className="font-20 font-weight-bold   mt-4 " > 
+                                กดเพื่อสร้าง idea Premise Tools  
+                            </span>
                         </div>
-                        <span style={{color:"#d1d1d1"}}  className="font-20 font-weight-bold   mt-4 " > 
-                            กดเพื่อสร้าง idea Premise Tools  
-                        </span>
-                    </div>
+                    </Link>
 
                     <div className="d-flex align-items-center mt-4 mb-3 ">
                         <div className=" mr-3 color_uncheck_small d-flex align-items-center justify-content-center">

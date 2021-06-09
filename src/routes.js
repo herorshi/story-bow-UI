@@ -12,6 +12,7 @@ import Character from './page/character/home_character'
 import CharacterProcess from './page/character/character_process'
 import HomeStoryBowL from './page/story-bowl/home-story-bowl'
 import IdeaPremise from './page/premise/idea_premise'
+import DeletePremise from './page/premise/delete-premise'
 function Routes() {
     return (
         <Router>
@@ -33,6 +34,9 @@ function Routes() {
                 </Route>   
                 <Route  path={"/idea-premise"}>
                     <IdeaPremise/>
+                </Route>   
+                <Route  path={"/delete-premise"}>
+                    <DeletePremise/>
                 </Route>   
                 <Route  path={"/theme"}>
                     <HomeTheme/>

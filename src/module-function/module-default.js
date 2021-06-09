@@ -978,6 +978,7 @@ const ReuseNormal = {
 
   },
   hide_popup(str){
+    console.log(str);
     document.getElementById('card-popup-'+str).style.opacity = 0;
     document.getElementById('card-popup-'+str).style.marginTop = "0";
     document.getElementById('card-popup-'+str).style.marginBottom = "0"; 

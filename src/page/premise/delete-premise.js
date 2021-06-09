@@ -8,7 +8,7 @@ import configs from './configurations';
 import './App.css';
 import './index.css'
 import './hight-popup.css'
-class HomePremise extends Component {
+class DeletePremise extends Component {
   
   constructor(props){
     super(props);
@@ -19,10 +19,22 @@ class HomePremise extends Component {
     
       data_premise:[ 
         [
-          {title:"จะเกิดอะไรขึ้นถ้า",txt:""}, 
-          {title:"",txt:""},
-          {title:"",txt:""}
+          {title:"จะเกิดอะไรขึ้นถ้า",txt:"นักเรียน"}, 
+          {title:"มีความรัก",txt:"กับคุณครู"},
+          {title:"แล้วแต่",txt:"นักเรียนต้องสอบได้อันดับ1"}
         ],
+
+        [
+            {title:"จะเกิดอะไรขึ้นถ้า",txt:"นักเรียน"}, 
+            {title:"มีความรัก",txt:"กับคุณครู"},
+            {title:"แล้วแต่",txt:"นักเรียนต้องสอบได้อันดับ1"}
+        ],
+
+        [
+            {title:"จะเกิดอะไรขึ้นถ้า",txt:"นักเรียน"}, 
+            {title:"มีความรัก",txt:"กับคุณครู"},
+            {title:"แล้วแต่",txt:"นักเรียนต้องสอบได้อันดับ1"}
+          ],
       ],
       check_value:0,
       select_data:0,
@@ -42,6 +54,14 @@ class HomePremise extends Component {
   state = {
 
   };
+
+
+  delete_premise = (index)=>{
+      let token = [...this.state.data_premise];
+      token.splice(index,1);
+      this.setState({data_premise:token});
+    //  array.splice(start_number,0,value_insert)
+  }
 
 
   plus_idea = ()=>{
@@ -95,14 +115,7 @@ class HomePremise extends Component {
 
 
   componentDidMount(){
-    document.querySelectorAll('.hexagon-group').forEach(element => {
-      element.children[0].children[1].style.fill = "white";
-      element.style.fill = "rgb(255, 255, 255)"
-    });
-    document.querySelectorAll('.hexagon-group')[18].style.fill = "#2d8cd6"; 
-    let middle = document.querySelectorAll('.hexagon-group')[18].children[0].children[1]    
-    middle.style.fill = 'white';
-    middle.innerHTML = 'นักเรียน';
+
  }
 
 
@@ -113,128 +126,36 @@ class HomePremise extends Component {
     const size = { x: layout.width, y: layout.height };
     return (
       <React.Fragment> 
-        <div id="header_blue"></div>
-        <div id="word-high" style={{ overflow:"scroll" }} className="backdrop-high  d-none ">
-          <div className="rounded content mx-auto mb-4 "> 
-            <div className=" rounded card t1 position-relative border-0" style={{marginTop:"1%"}}>
-            <div className="  card-header  border-blue  border-0  "   style={{  minHeight:"30px"}}></div>
-              <div className=" rounded card-body bg-premise-txt mh-400 text-center">
-              <HexGrid width={config.width} height={config.height}>
-                <Layout size={size} flat={layout.flat} spacing={layout.spacing} origin={config.origin}>
-              {
-                hexagons.map((hex, i) => (
-                  <Hexagon onClick={(event)=>{
-                    // rn.show_popup('idea-premise');      
-                    // let element = event.currentTarget.children[0]
-                    // let token_element = element.children[0]
-                    // let txt = token_element.nextElementSibling
-                    // window.txt = txt.innerHTML;
-                    // console.log(window.txt,'window.txt');
-                    // txt.innerHTML = 'TEST';
-                    // txt.style.fill = "black"
-                    // element.style.fill =  "#ec9441";
-                  }}  key={config.mapProps + i} q={hex.q} r={hex.r} s={hex.s}>
-                    <Text>{ i }</Text>
-                ]
-                    
-                  </Hexagon>
-                ))
-              }
-              </Layout>
-            </HexGrid>
-              
-              </div>
-              
-              <div className="mt-4 mb-2 ">
-                <div className="content mx-auto mb-4 ">
-                  <div className="d-flex">
-                    
-                    <span className="font-weight-bold font-18 mr-auto">
-                      กรุณาเลือกคำจากช่องว่าง Premise
-                    </span>
-                     <div className="d-inline">
-                       {/* <button className="btn text-white font-weight-bold bg-bow mr-2"></button> */}
-                       <button className="btn text-white font-weight-bold font-18 share-top mr-2">ย้อนกลับ</button>
-                       <button onClick={()=>{
-                         console.log( this.state.select_data ,'select_data');
-                         this.setState({t1:false,t2:false},()=>{console.log(this.state.t1,'t1');});
-                         rn.add_class(document.getElementById('word-high'),'d-none')
-                       }} className="btn text-white font-weight-bold font-18 bg-blue mr-2">ยืนยันรายการ</button>
-                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>  
-        </div>
-        <Popup id="idea-premise-title" > 
+
+
+
+        <Popup id="delete-premise" > 
           <div></div>
           <div>
-            <h3>Idea Premise</h3>
-
-            <div className="content mx-auto mb-4 ">
-              <div className=" font-18 mt-3  mb-2  font-weight-bold ">หัวข้อ</div>
-              <div className="bd-8 bd-blue ml-3  font-weight-bold pl-4 bg-card-board  p-2"> จะเกิดอะไรขึ้น... ถ้า </div>
+            <div className="text-center">
+                <h3>คุณต้องการลบ idea Premise ใช่หรือไม่</h3>
             </div>
-
-            <div className="content mx-auto mb-4 ">
-              <div className=" font-18 mt-3  mb-2  font-weight-bold ">เนื้อหา</div>
-              {/*  */}
-              {
-                this.state.t1  ? 
-                <div onClick={()=> {rn.remove_class(document.getElementById('word-high'),'d-none')}}
-                 className=" font-18 color-gray font-weight-bold d-flex justify-content-center align-items-center a-click mh-100 bd-8 bd-blue ml-3  font-weight-bold pl-4 bg-card-board  p-2">
-                  <i class="fas fa-plus mr-4  " style={{fontSize:"25px"}} ></i>  กดเพื่อเลือกเนื้อหาจาก Premise
-                </div>
-                :
-                <div  className=" font-18 ml-3   text-dark font-weight-bold  a-click mh-100 bd-8 bd-blue   font-weight-bold pl-4 bg-card-board  p-2">
-                   รุ่นพี่
-                </div>
-              }
-            </div>
-            <div className="mt-3">
-            </div>
-          </div>
-          <div>
-            <button onClick={()=> rn.hide_popup("idea-premise-title")} style={{"minWidth":"130px"}} className="text-white btn share-top mr-2">ปิด</button>
-            <button onClick={()=> this.save_word() } style={{"minWidth":"130px"}} className="text-white bg-blue btn "> ยืนยันรายการ  </button>
-          </div>
-        </Popup>
-
-
-        <Popup id="idea-premise-detail" > 
-          <div></div>
-          <div>
-            <h3>Idea Premise</h3>
             
-            <div className="content mx-auto mb-4 ">
-              <div className=" font-18 mt-3  mb-2  font-weight-bold ">หัวข้อ</div>
-              <input id="title_two" type="text" className=" w-100 bd-8 bd-blue ml-3  font-weight-bold pl-4   p-2"   />
-              <div className=" font-18 mt-3  mb-2  font-weight-bold ">เนื้อหา</div>
-
-              { 
-                this.state.t2 ?  
-                <div 
-                onClick={()=> {rn.remove_class(document.getElementById('word-high'),'d-none')}}
-                className=" w-100  font-18 color-gray font-weight-bold d-flex justify-content-center align-items-center a-click mh-100 bd-8 bd-blue ml-3  font-weight-bold pl-4   p-2">
-                  <i class="fas fa-plus mr-4  " style={{fontSize:"25px"}} ></i>  กดเพื่อเลือกเนื้อหาจาก Premise
-              </div> :
-              <div  className=" font-18 ml-3   text-dark font-weight-bold  a-click mh-100 bd-8 bd-blue   font-weight-bold pl-4 bg-card-board  p-2">
-                ทดสอบ
-              </div>
-              }             
+            <div className="mt-3 pl-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eaque aspernatur dicta eveniet obcaecati saepe distinctio nostrum, minus consequuntur natus, reprehenderit voluptate quas deserunt eum totam? Maiores quibusdam laboriosam perferendis.
+            </div>
+            <div className="mt-5 text-center">
+                <div className="circle-delete-premise mx-auto  "></div>
+            </div>
+            <div className="mt-5 text-center">
+                <button onClick={()=>rn.hide_popup("delete-premise")} className="text-white   mw-150 btn share-top font-weight-bold font-18 mr-2">ย้อนกลับ</button>
+                <Link to="/premise">
+                    <button className="text-white mw-150  btn bg-blue font-18 font-weight-bold">ยืนยันรายการ</button>  
+                </Link>
+                
             </div>
           </div>
-          <div>
-            <button onClick={()=>{
-              document.getElementById('title_two').value = "";
-              rn.hide_popup("idea-premise-detail")
-            }} style={{"minWidth":"130px"}} className="text-white btn share-top mr-2">ปิด</button>
-            <button onClick={()=>this.save_detail(window.detail) } style={{"minWidth":"130px"}} className="text-white bg-blue btn ">ยืนยันรายการ  </button>
-          </div>
-        </Popup>
-        
 
+        </Popup>
+
+
+
+        <div id="header_blue"></div>
         <div className="content mx-auto ">
             <div className="d-flex my-4  justify-content-between">
                 <div className=" d-inline font-30 font-weight-bold mr-auto">
@@ -244,7 +165,7 @@ class HomePremise extends Component {
                     <button className=" mr-2 btn mw-180 share-top-right text-white font-weight-bold">
                         รับชื่อวีดีโอสอน
                     </button>
-                    <button   onClick={()=>this.plus_idea()} className=" mr-2 btn mw-180 bg-blue text-white font-weight-bold">
+                    <button    className=" mr-2 btn mw-180 bg-blue text-white font-weight-bold">
                         + เพิ่มรายการ
                     </button>
                     <button className="  btn mw-180 bg-bow text-white font-weight-bold">
@@ -262,20 +183,11 @@ class HomePremise extends Component {
                       <React.Fragment> 
                             <div className="row">
                               <div className="col-md-1 text-center d-flex justify-content-end align-items-center a-click ">
-                                  {
-                                    this.state.check_value == index  ?  
-                                  <div className="valid_premise d-flex align-items-center justify-content-center ">
-                                      <i class="fas fa-check text-white "></i>
-                                  </div> :
-                                  <div onClick={()=>this.setState({check_value:index})} className="color_uncheck_small d-flex align-items-center justify-content-center">
-                                      <i class="fas fa-check text-white "></i>
-                                  </div>
-                                  }
+                                    <div   onClick={()=>this.delete_premise(index)} className="delete_premise d-flex align-items-center justify-content-center ">
+                                        <div className="bg-white" style={{ width:"10px" , height:"5px" }}></div>
+                                    </div> 
                               </div>
-                              <div onClick={()=> {
-                                this.setState({select_data:index});
-                                rn.show_popup("idea-premise-title")
-                              } }  className="col-md-3 a-click">
+                              <div  className="col-md-3 a-click">
                                   <div class="card mh-120 shasow_card bd-8" >
                                     <div class="card-body">
                                       <div className="d-flex align-items-center justify-content-between">
@@ -284,7 +196,7 @@ class HomePremise extends Component {
                                       </div>
                                     {  
                                        
-                                      rn.ckvalue(content[0]["txt"]) ? 
+                                        rn.ckvalue(content[0]["txt"]) ? 
                                           <div className=" mt-3 font-20 font-weight-bold color-header-board ">
                                                 {content[0]["txt"]}     
                                           </div> :
@@ -297,7 +209,7 @@ class HomePremise extends Component {
                               </div>
 
 
-                              <div onClick={()=> {rn.show_popup('idea-premise-detail'); window.detail = 2; }} className="col-md-3 a-click">
+                              <div  className="col-md-3 a-click">
                                   <div class="card mh-120 shasow_card bd-8" >
                                     <div class="card-body">
                                       { rn.ckvalue(content[1]["title"]) ?  
@@ -329,7 +241,7 @@ class HomePremise extends Component {
                                   </div>
                               </div>
 
-                              <div  onClick={()=>{rn.show_popup('idea-premise-detail'); window.detail = 3; }} className="col-md-5 a-click ">
+                              <div   className="col-md-5 a-click ">
                                   <div class="card mh-120 shasow_card bd-8" >
                                     <div class="card-body">
                                       
@@ -375,49 +287,21 @@ class HomePremise extends Component {
                 }
               </div>
             </div>
-            <div className="font-30 font-weight-bold mt-5 mb-2">Final Premise</div>
-            <div className=" color-blue-light mb-3 p-3 ">
-                <div class="card bg-card-board">
-                  <div class="card-body">
-                    <div className=" font-20 font-weight-bold mb-2">จะเกิดอะไรขึ้น... ถ้า</div>
-                    {
-                      rn.ckvalue(
-                        this.state.data_premise[this.state.check_value][0]['txt'] &&
-                        this.state.data_premise[this.state.check_value][1]['title'] &&
-                        this.state.data_premise[this.state.check_value][1]['txt'] &&
-                        this.state.data_premise[this.state.check_value][2]['title'] &&
-                        this.state.data_premise[this.state.check_value][2]['txt'] 
-                      ) ? 
-                      <div className=" pl-5 font-20 font-weight-bold mb-2 color-header-board ">
-                        {
-                          this.state.data_premise[this.state.check_value][0]['txt']+" "+
-                          this.state.data_premise[this.state.check_value][1]['txt']+" "+
-                          this.state.data_premise[this.state.check_value][2]['txt']
-                        }
-                      </div>                      
-                      :
-                      <div className=" pl-5 font-20 font-weight-bold mb-2 color-header-board op-harf">
-                        จะเกิดอะไรขึ้น... ถ้า
-                      </div>
-                    }
-                  </div>
-                </div>
-            </div>
             <div className="text-right mb-5">
                 <Link to="/coverage">
                   <button className="btn text-white share-top mw-150 font-weight-bold  mr-2 ">
                       ย้อนกลับ
                   </button>                  
                 </Link>
-                <Link to="/coverage"> 
-                  <button className="btn text-white   bg-blue mw-150 font-weight-bold">
+                {/* <Link to="/premise">  */}
+                  <button onClick={()=>rn.show_popup("delete-premise")} className="btn text-white   bg-blue mw-150 font-weight-bold">
                       ยืนยันรายการ
                   </button>                
-                </Link>
+                {/* </Link> */}
             </div>
         </div>
       </React.Fragment>
     );
   }
 }
-export default withRouter(HomePremise);
+export default withRouter(DeletePremise);
