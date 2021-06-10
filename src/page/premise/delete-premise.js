@@ -114,22 +114,17 @@ class DeletePremise extends Component {
  }
 
 
+
   componentDidMount(){
 
- }
-
-
-
+  }
   render() {
     const { hexagons, config } = this.state;
     const layout = config.layout;
     const size = { x: layout.width, y: layout.height };
     return (
       <React.Fragment> 
-
-
-
-        <Popup id="delete-premise" > 
+        <Popup id="delete-premise"> 
           <div></div>
           <div>
             <div className="text-center">
@@ -145,16 +140,13 @@ class DeletePremise extends Component {
             <div className="mt-5 text-center">
                 <button onClick={()=>rn.hide_popup("delete-premise")} className="text-white   mw-150 btn share-top font-weight-bold font-18 mr-2">ย้อนกลับ</button>
                 <Link to="/premise">
-                    <button className="text-white mw-150  btn bg-blue font-18 font-weight-bold">ยืนยันรายการ</button>  
+                    <button className="text-white mw-150  btn bg-blue font-18 font-weight-bold">
+                        ยืนยันรายการ
+                    </button>  
                 </Link>
-                
             </div>
           </div>
-
         </Popup>
-
-
-
         <div id="header_blue"></div>
         <div className="content mx-auto ">
             <div className="d-flex my-4  justify-content-between">
@@ -290,14 +282,12 @@ class DeletePremise extends Component {
             <div className="text-right mb-5">
                 <Link to="/coverage">
                   <button className="btn text-white share-top mw-150 font-weight-bold  mr-2 ">
-                      ย้อนกลับ
+                    ย้อนกลับ
                   </button>                  
                 </Link>
-                {/* <Link to="/premise">  */}
-                  <button onClick={()=>rn.show_popup("delete-premise")} className="btn text-white   bg-blue mw-150 font-weight-bold">
-                      ยืนยันรายการ
-                  </button>                
-                {/* </Link> */}
+                  <button onClick={()=>rn.show_popup("delete-premise")} className="btn text-white bg-blue mw-150 font-weight-bold">
+                    ยืนยันรายการ
+                  </button>    
             </div>
         </div>
       </React.Fragment>

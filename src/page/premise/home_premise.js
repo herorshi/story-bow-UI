@@ -247,9 +247,12 @@ class HomePremise extends Component {
                     <button   onClick={()=>this.plus_idea()} className=" mr-2 btn mw-180 bg-blue text-white font-weight-bold">
                         + เพิ่มรายการ
                     </button>
+                    <Link to="/delete-premise">
                     <button className="  btn mw-180 bg-bow text-white font-weight-bold">
                         แก้ไขรายการ
-                    </button>
+                    </button>  
+                    </Link>
+                    
                 </div>
             </div>
             <div class="card bg-card-board  mb-4 ">
