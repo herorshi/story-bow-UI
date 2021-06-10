@@ -41,8 +41,7 @@ class Character extends Component {
             <div class="card card bg-card-board border-0 " style={{"minHeight":"600px"}}>
               <div class="card-body">
                 <div className="row">
-                    
-                    <div className="col-md-4">
+                    <div className="col-md-4 a-click">
                         <div class="card mh-180 border-0 bd-8" >
                             <div class="card-body">
                                 <div className="d-flex align-items-center justify-content-between">
@@ -67,7 +66,7 @@ class Character extends Component {
                     </div>
 
 
-                    <div className="col-md-4">
+                    <div className="col-md-4 a-click">
                         <div class="card mh-180 border-0 bd-8"   >
                             <div class="card-body">
                                 <div className="d-flex align-items-center justify-content-between">
@@ -92,7 +91,7 @@ class Character extends Component {
                     </div>
 
                     <div className="col-md-4">
-
+                        
                         <div class="card mh-180 border-0 bd-8" >
                             <Link to="/character_process">
                                 <div class="card-body">
@@ -106,12 +105,15 @@ class Character extends Component {
                             </Link>
                         </div>
                     </div>
-
-
                 </div>
               </div>
             </div>
-
+            <div className="mt-4 mb-3 d-flex justify-content-end ">
+                <Link to="/lock_story_line">
+                    <button className=" mw-150  btn share-top font-weight-bold text-white mr-2 font-18">ย้อนกลับ</button>
+                </Link>
+                <button className=" mw-150 btn bg-blue font-weight-bold text-white mr-2 font-18">ยืนยันรายการ</button>
+            </div>
         </div>
       </React.Fragment>
     );

@@ -898,12 +898,12 @@ negative_set_txt(index1,index2,event){
                         ย้อนกลับ
                     </button>
                 </Link>
-                {/* <Link to="/coverage"> */}
-                    <button   onClick={()=>  this.setState({final_theme:this.state.value_final_theme})}
+                <Link to="/coverage">
+                    <button   
                      className="btn text-white   bg-blue mw-150 font-weight-bold">
                         ยืนยันรายการ
                     </button>
-                {/* </Link> */}
+                </Link>
             </div>
         </div>
       </React.Fragment>

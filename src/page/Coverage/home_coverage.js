@@ -6,7 +6,7 @@ import rn from '../../module-function/module-default'
 import 'react-circular-progressbar/dist/styles.css';
 import './coverage.css'
 import '../../stylesheet.css'
-
+// (index == this.state.final.target ? " valid_premise_normal " : "color_uncheck_small_normal" )
 class Coverage extends Component {
   state = {
       value :0.5,
@@ -21,7 +21,12 @@ class Coverage extends Component {
       checkbox_value:"",
       premise:"",
       premise_value:"",
-      status_btn_premise:true
+      status_btn_premise:true,
+      data_checkbox:["1","2","3","4","5"],
+      data_ck_select:[],
+      data_genre:["1","2","3","4","5"],
+      data_ck_genre:[]
+
 };
      value_title = (value)=>{
           this.setState({title:value,value_title:""});
@@ -56,7 +61,7 @@ class Coverage extends Component {
           <div>
             <h3>Title</h3>
             <div className="mt-3 pl-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eaque aspernatur dicta eveniet obcaecati saepe distinctio nostrum, minus consequuntur natus, reprehenderit voluptate quas deserunt eum totam? Maiores quibusdam laboriosam perferendis.
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eaque aspernatur dicta eveniet obcaecati saepe distinctio nostrum, minus consequuntur natus, reprehenderit voluptate quas deserunt eum totam? Maiores quibusdam laboriosam perferendis.
             </div>
             <div className="mt-3">
                 <textarea  placeholder="กรุณาระบุข้อความ..." value ={this.state.value_title} 
@@ -76,7 +81,7 @@ class Coverage extends Component {
           <div>
             <h3>Lock line</h3>
             <div className="mt-3 pl-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eaque aspernatur dicta eveniet obcaecati saepe distinctio nostrum, minus consequuntur natus, reprehenderit voluptate quas deserunt eum totam? Maiores quibusdam laboriosam perferendis.
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eaque aspernatur dicta eveniet obcaecati saepe distinctio nostrum, minus consequuntur natus, reprehenderit voluptate quas deserunt eum totam? Maiores quibusdam laboriosam perferendis.
             </div>
             <div className="mt-3">
                 <textarea  
@@ -100,65 +105,40 @@ class Coverage extends Component {
           <div>
             <h3>Genre</h3>
             <div className="mt-3 pl-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eaque aspernatur dicta eveniet obcaecati saepe distinctio nostrum, minus consequuntur natus, reprehenderit voluptate quas deserunt eum totam? Maiores quibusdam laboriosam perferendis.
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eaque aspernatur dicta eveniet obcaecati saepe distinctio nostrum, minus consequuntur natus, reprehenderit voluptate quas deserunt eum totam? Maiores quibusdam laboriosam perferendis.
             </div>
             <div className="mt-3">
                 <div class="card">
                   <div class="card-body">
 
-                     <div className="d-flex align-items-center mb-2">
+                     {/* <div className="d-flex align-items-center mb-2">
                          <input type="radio" id="l_line1"  name="lock_line" 
                           value="Genre 1" onClick={(event)=> this.setState({genre_value:event.target.value})} 
                           className="mr-3 font-weight-bold"  />
                          <label className="form-check-label color-header-board font-weight-bold" for="l_line1"> Genre 1</label>
-                     </div>
-                     <div className="d-flex align-items-center mb-2">
-                         <input 
-                            type="radio" 
-                            id="l_line2"  
-                            name="lock_line"  
-                            value="Genre 2" 
-                            onClick={(event)=> this.setState({genre_value:event.target.value})}
-                            className="mr-3 font-weight-bold"  
-                        />
-                        <label className="form-check-label color-header-board font-weight-bold" for="l_line2"> Genre 2</label>
-                     </div>
-                     <div className="d-flex align-items-center mb-2">
-                         <input 
-                         type="radio" 
-                         id="l_line3"  
-                         name="lock_line"  
-                         value="Genre 3" 
-                         onClick={(event)=> this.setState({genre_value:event.target.value})}
-                         className="mr-3 font-weight-bold"  
-                         />
-                        <label className="form-check-label color-header-board font-weight-bold" for="l_line3"> Genre 3</label>
-                     </div>
-
-                     <div className="d-flex align-items-center mb-2">
-                         <input 
-                         type="radio" 
-                         id="l_line4"  
-                         name="lock_line"  
-                         value="Genre 4" 
-                         onClick={(event)=> this.setState({genre_value:event.target.value})}
-                         className="mr-3 font-weight-bold"  
-                         />
-                         <label className="form-check-label color-header-board font-weight-bold" for="l_line4"> Genre 4</label>
-                     </div>
-                     <div className="d-flex align-items-center mb-2">
-                         <input 
-                         type="radio" 
-                         id="l_line5"  
-                         name="lock_line" 
-                         value="Genre 5" 
-                         onClick={(event)=> this.setState({genre_value:event.target.value})}
-                         className="mr-3 font-weight-bold"  
-                         />
-                         <label className="form-check-label color-header-board font-weight-bold" for="l_line5"> Genre 5</label>
-                     </div>
-
-
+                     </div> */}
+                {
+                    this.state.data_genre.map((content,index)=>{
+                        return(
+                            <div className="d-flex align-items-center mb-4">
+                                <div onClick={()=>{}} className="  px-0 a-click ">
+                                    <div 
+                                    onClick={()=>{
+                                      rn.set_uni_array(this,"data_ck_genre",(index+1).toString())  
+                                    }}
+                                    className={ 
+                                        (this.state.data_ck_genre.indexOf((index+1).toString()) >=0  ? " valid_premise_small " : "color_uncheck_small_high" )
+                                        +" font-10  mr-3 ml-auto d-flex align-items-center justify-content-center " 
+                                    }
+                                    >
+                                        <i class="fas fa-check text-white "></i>
+                                    </div>
+                                </div>
+                                <label className="form-check-label color-header-board font-weight-bold" for="l_line2"> Genre {index+1}</label>
+                            </div>
+                        )
+                    })   
+                  }   
                   </div>
                 </div>
             </div>
@@ -174,64 +154,55 @@ class Coverage extends Component {
           <div>
             <h3>Check Box</h3>
             <div className="mt-3 pl-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eaque aspernatur dicta eveniet obcaecati saepe distinctio nostrum, minus consequuntur natus, reprehenderit voluptate quas deserunt eum totam? Maiores quibusdam laboriosam perferendis.
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eaque aspernatur dicta eveniet obcaecati saepe distinctio nostrum, minus consequuntur natus, reprehenderit voluptate quas deserunt eum totam? Maiores quibusdam laboriosam perferendis.
             </div>
             <div className="mt-3">
+
                 <div class="card">
                   <div class="card-body">
+                  {
+                    this.state.data_checkbox.map((content,index)=>{
+                        return(
+                            <div className="d-flex align-items-center mb-4">
+                                <div onClick={()=>{}} className="  px-0 a-click ">
+                                    <div 
+                                    onClick={()=>{
+                                      rn.set_uni_array(this,"data_ck_select",(index+1).toString())  
+                                    }}
+                                    className={ 
+                                        (this.state.data_ck_select.indexOf((index+1).toString()) >=0  ? " valid_premise_small " : "color_uncheck_small_high" )
+                                        +" font-10  mr-3 ml-auto d-flex align-items-center justify-content-center " 
+                                    }
+                                    >
+                                        <i class="fas fa-check text-white "></i>
+                                    </div>
+                                </div>
+                                <label className="form-check-label color-header-board font-weight-bold" for="l_line2"> Check Box {index+1}</label>
+                            </div>
+                        )
+                    })   
+                  }   
 
-                     <div className="d-flex align-items-center mb-2">
-                         <input type="radio" id="l_line1"  name="lock_line" 
-                          value="Check Box 1" onClick={(event)=> this.setState({checkbox_value:event.target.value})} 
-                          className="mr-3 font-weight-bold"  />
-                         <label className="form-check-label color-header-board font-weight-bold" for="l_line1"> Check Box 1</label>
-                     </div>
-                     <div className="d-flex align-items-center mb-2">
-                         <input 
-                            type="radio" 
-                            id="l_line2"  
-                            name="lock_line"  
-                            value="Check Box 2" 
-                            onClick={(event)=> this.setState({checkbox_value:event.target.value})}
-                            className="mr-3 font-weight-bold"  
-                        />
-                        <label className="form-check-label color-header-board font-weight-bold" for="l_line2"> Check Box 2</label>
-                     </div>
-                     <div className="d-flex align-items-center mb-2">
-                         <input 
-                         type="radio" 
-                         id="l_line3"  
-                         name="lock_line"  
-                         value="Check Box 3" 
-                         onClick={(event)=> this.setState({checkbox_value:event.target.value})}
-                         className="mr-3 font-weight-bold"  
-                         />
-                        <label className="form-check-label color-header-board font-weight-bold" for="l_line3"> Check Box 3</label>
-                     </div>
-
-                     <div className="d-flex align-items-center mb-2">
-                         <input 
-                         type="radio" 
-                         id="l_line4"  
-                         name="lock_line"  
-                         value="Check Box 4" 
-                         onClick={(event)=> this.setState({checkbox_value:event.target.value})}
-                         className="mr-3 font-weight-bold"  
-                         />
-                         <label className="form-check-label color-header-board font-weight-bold" for="l_line4"> Check Box 4</label>
-                     </div>
-                     <div className="d-flex align-items-center mb-2">
-                         <input 
-                         type="radio" 
-                         id="l_line5"  
-                         name="lock_line" 
-                         value="Check Box 5" 
-                         onClick={(event)=> this.setState({checkbox_value:event.target.value})}
-                         className="mr-3 font-weight-bold"  
-                         />
-                         <label className="form-check-label color-header-board font-weight-bold" for="l_line5"> Check Box 5</label>
-                     </div>
-
+                            <div className="d-flex align-items-center mb-4">
+                                <div onClick={()=>{}} className="  px-0 a-click ">
+                                    <div 
+                                    onClick={()=>{
+                                      rn.set_uni_array(this,"data_ck_select",("x").toString())  
+                                    }}
+                                    className={ 
+                                        (this.state.data_ck_select.indexOf("x") >=0  ? " valid_premise_small " : "color_uncheck_small_high" )
+                                        +" font-10  mr-3 ml-auto   d-flex align-items-center justify-content-center " 
+                                    }
+                                    >
+                                        <i class="fas fa-check text-white "></i>
+                                    </div>
+                                </div>
+                                <div className=" w-100 d-flex align-items-center form-check-label color-header-board font-weight-bold" for="l_line2">
+                                    <span className="mr-3">อื่นๆ </span>
+                                    <input id="other_checkbox" type="text" placeholder="กรุณาระบุ" 
+                                    className=" border-right-0 border-left-0  border-top-0  color-header-board font-weight-bold form-control w-75" />
+                                </div>
+                            </div>
 
                   </div>
                 </div>
@@ -285,7 +256,9 @@ class Coverage extends Component {
                     </div>
                     
                     <Link to="/idea-premise">
-                        <div className=" a-click text-center  bd-8 mt-3 w-100 idea-premise card-idea-premise active-premise">
+                        <div  onClick={()=>{
+                             document.getElementsByTagName("BODY")[0].style.overflow = "scroll"
+                        }} className=" a-click text-center  bd-8 mt-3 w-100 idea-premise card-idea-premise active-premise">
                             <div  className="mt-5">
                                 <i class="fas fa-plus "  style={{fontSize:"60px",color:"#d1d1d1"}} ></i>
                             </div>

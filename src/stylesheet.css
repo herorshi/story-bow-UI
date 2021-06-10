@@ -77,7 +77,9 @@
 .card-project-long{
     min-height: 250px!important;
 }
-
+.font-10{
+    font-size:10px;
+}
 .font-18{
     font-size: 18px;
 }
@@ -125,7 +127,7 @@
     height: 5px;
     background: #e2e2e2;
 }
-.valid_premise{
+.valid_premise_normal{
     width: 40px;
     height:40px;
     background: #2ea2ff;
@@ -148,6 +150,13 @@
 .valid_premise{
     width: 30px;
     height:30px;
+    background: #2ea2ff;
+    border-radius:80px;  
+}
+
+.valid_premise_small{
+    width: 20px;
+    height:20px;
     background: #2ea2ff;
     border-radius:80px;  
 }
@@ -191,6 +200,20 @@
     height: 30px;
     border-radius: 80px;
 }
+
+.color_uncheck_small_normal {
+    background: #aaaaaa;
+    width: 40px;
+    height: 40px;
+    border-radius: 80px;
+}
+.color_uncheck_small_high {
+    background: #aaaaaa;
+    width: 20px;
+    height: 20px;
+    border-radius: 80px;
+}
+
 .shadow-bt{
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
 }
@@ -329,6 +352,7 @@
 }
 .backdrop{
     position: fixed;
+    top: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
@@ -417,4 +441,29 @@ a:link
     background: white;
     border:  8px solid  #aaaaaa;
     border-radius:100px;
+}
+.bd-lock-line{
+    border: 2.5px solid #aaaaaa !important
+}
+.bd-lock-line-active {
+    border: 2.5px solid #2ea2ff !important
+}
+.placeo-blue::placeholder{
+    color:#2ea2ff
+}
+.profile-image{
+    border: 2.5px solid #2ea2ff !important;
+    width: 120px;
+    height: 100px;
+    background: #bbbbbb;
+}
+.profile-image-add{
+    width:120px;
+    height: 100px;
+    background: white;
+    border: 2.5px solid #2ea2ff !important;
+}
+
+#other_checkbox::placeholder{
+    color:#2ea2ff  
 }
