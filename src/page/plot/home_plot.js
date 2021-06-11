@@ -153,11 +153,8 @@ class HomePlot extends Component {
                     className="p-3  font-weight-bold color-header-board bd-blue w-100 bd-radius-10" 
                     name="" id="" cols="30" rows="8">
                     </textarea>
-
                 </div>
-
             }
-
             </div>
           </div>
           <div>
@@ -167,7 +164,6 @@ class HomePlot extends Component {
             }} 
                 style={{"minWidth":"130px"}}
                 className="text-white btn share-top mr-2">ปิด</button>
-
             <button onClick={()=> {
                 // this.value_premise(this.state.premise_value)
                 console.log(this.state,'state');

@@ -65,14 +65,15 @@ class DeletePremise extends Component {
 
 
   plus_idea = ()=>{
-        this.setState({
-          data_premise: [...this.state.data_premise  ,
-          [
-            {title:"จะเกิดอะไรขึ้นถ้า",txt:""}, 
-            {title:"",txt:""},
-            {title:"",txt:""}
-          ]
-        ]  });
+    this.setState({
+      data_premise: [...this.state.data_premise  ,
+      [
+        {title:"จะเกิดอะไรขึ้นถ้า",txt:""}, 
+        {title:"",txt:""},
+        {title:"",txt:""}
+      ]
+    ]
+  });
   }
 
   save_word = ()=>{
@@ -83,7 +84,7 @@ class DeletePremise extends Component {
     //   {title:"",txt:""},
     //   {title:"",txt:""}
     //  ]
-     console.log(token_premise,'token_premise');
+      console.log(token_premise,'token_premise');
       this.setState({data_premise:token_premise});
       this.setState({t1:true});
       rn.hide_popup("idea-premise-title")
@@ -105,12 +106,11 @@ class DeletePremise extends Component {
       token_premise[this.state.select_data][2]['title'] =  document.getElementById('title_two').value   
       token_premise[this.state.select_data][2]['txt'] =  "ที่ไหน"
       console.log(token_premise,'token_premise');
-       this.setState({data_premise:token_premise});
-       this.setState({data_premise:token_premise,t2:true,t1:true});
-       document.getElementById('title_two').value = "";
-       rn.hide_popup("idea-premise-detail");
+      this.setState({data_premise:token_premise});
+      this.setState({data_premise:token_premise,t2:true,t1:true});
+      document.getElementById('title_two').value = "";
+      rn.hide_popup("idea-premise-detail");
     }
-
  }
 
 
@@ -246,16 +246,16 @@ class DeletePremise extends Component {
                                           <div className="font-20 font-weight-bold  text-dark ">
                                             {content[2]["title"]}
                                           </div>
-                                          <i  style={{"color":"#cbcbcb"}} class="fas fa-pen a-click"></i>
+                                          <i   style={{"color":"#cbcbcb"}} class="fas fa-pen a-click"></i>
                                         </div>
-                                      : 
+                                        : 
                                         <div className="d-flex align-items-center justify-content-between">
                                           <div className="font-20 font-weight-bold color_text_pm "> กรุณาระบุหัวข้อ</div>
                                           <i  style={{"color":"#cbcbcb"}} class="fas fa-pen a-click"></i>
                                         </div>
                                       }
 
-{
+                                      {
                                         rn.ckvalue(content[2]["txt"]) ? 
                                         <div className=" mt-3 font-20 font-weight-bold color-header-board ">
                                           {content[2]["txt"]}
@@ -280,14 +280,14 @@ class DeletePremise extends Component {
               </div>
             </div>
             <div className="text-right mb-5">
-                <Link to="/coverage">
-                  <button className="btn text-white share-top mw-150 font-weight-bold  mr-2 ">
-                    ย้อนกลับ
-                  </button>                  
-                </Link>
-                  <button onClick={()=>rn.show_popup("delete-premise")} className="btn text-white bg-blue mw-150 font-weight-bold">
-                    ยืนยันรายการ
-                  </button>    
+              <Link to="/coverage">
+                <button className="btn text-white share-top mw-150 font-weight-bold  mr-2 ">
+                  ย้อนกลับ
+                </button>                  
+              </Link>
+                <button onClick={()=>rn.show_popup("delete-premise")} className="btn text-white bg-blue mw-150 font-weight-bold">
+                  ยืนยันรายการ
+                </button>    
             </div>
         </div>
       </React.Fragment>

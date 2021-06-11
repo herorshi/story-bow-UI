@@ -363,6 +363,7 @@
 }
 .backdrop-high{
     position: fixed;
+    top: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
@@ -410,9 +411,12 @@
     border:  1px solid #2ea2ff!important;
 }
 
-textarea::placeholder {
+textarea::placeholder ,
+select::placeholder
+{
     color: #2ea2ff;
 }
+
 .card-idea-premise{
     background: #fafafa;
     min-height: 200px;
@@ -466,4 +470,184 @@ a:link
 
 #other_checkbox::placeholder{
     color:#2ea2ff  
+}
+.color-og{
+    color: #d6472d;
+    text-decoration:underline
+}
+
+.debate{
+    top: 67px;
+    left: 731px;;
+}
+.event_point_point{
+    top:  202px;
+    left: 379px;
+}
+
+.Set_goal{
+    top:  202px;
+    left: 1021px;
+}
+.Setting{
+    top: 367px;
+    left: 265px;
+}
+.First_Seq{
+    top: 495px;
+    left: 202px;
+}
+.Character{
+    top: 627px;
+    left: 176px;
+}
+.Appearance{
+    top: 678px;
+    left: 169px;
+}
+
+.theme_state{
+    top: 958px;
+    left: 234px;
+}
+.get_target{
+    top: 1095px;
+    left: 367px;
+}
+.rise_climax{
+    top: 1168px;
+    left: 485px;
+}
+.falling_climax{
+    top: 1230px;
+    left: 690px;
+}
+.apprve_lesson{
+    top: 1168px;
+    left: 866px;
+}
+.true_climax{
+    top: 1095px;
+    left: 998px;
+}
+
+.solution{
+    top: 958px;
+    left: 1126px;
+}
+.change{
+    top: 638px;
+    left: 1269px;
+}
+ .final_seq{
+    top: 373px;
+    left: 1136px;
+ }
+ .mission_1{
+    top: 350px;
+    left: 588px;
+ }
+ .mission_2{
+    top: 434px;
+    left: 472px;
+ }
+ .mission_3{
+    top: 554px;
+    left: 419px;
+ }
+ .falling_dow{
+    top: 712px;
+    left: 445px;
+ }
+ 
+.alone{
+    top: 946px;
+    left: 633px;
+}
+.find_the_way{
+    top: 946px;
+    left: 800px;
+}
+
+.learn_lesson{
+    top: 698px;
+    left: 999px;
+}
+
+.obstacle_2{
+    top: 554px;
+    left: 979px;
+}
+.obstacle_1{
+    top: 350px;
+    left: 818px;
+}
+.turning_poin{
+    top: 559px;
+    left: 683px;
+}
+
+.bad_comming{
+    top: 641px;
+    left: 683px;
+}
+.stake_rise{
+    top: 713px;
+    left: 700px;
+}
+
+.card-bowl{
+    width: 300px;
+    height: 150px;
+    z-index: 10001px;
+}
+.poition_card_bowl{
+    top: -63px;
+    left: -108px;
+}
+.bg-card-bowl{
+    background: #41aaec;
+}
+
+.color-bow2
+{
+    color: #ec6241!important;
+}
+.bg-card-bowl2{
+    background: #ec6241!important;
+}
+.color-bow3{
+    color: #4e41ec!important;
+}
+.bg-card-bow3{
+    background: #4e41ec!important;
+}
+
+.bg-card-bow4{
+    background: #ec9441!important;
+}
+
+
+.color-bow4{
+    color: #ec9441!important ;
+}
+
+
+.nubmer_card{
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius:100px;
+    color:#41aaec;
+}
+
+.sh{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.z2{
+    z-index: 2;
+}
+.z10001{
+    z-index: 10;
 }

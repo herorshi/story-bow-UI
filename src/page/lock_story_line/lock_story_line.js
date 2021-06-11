@@ -14,14 +14,51 @@ class LockStoryLine extends Component {
       final:{name:"",data:["","",""],txt:"",target:0},
   };
 
+  remove_card_black = (key)=>{
+    
+    let token = {...this.state[key]}
+    token.data = token.data.filter((value,index)=>{
+        if(index >2 ){
+            if(rn.ckvalue(value)) {
+                return true
+            }
+            else {
+                return  false
+            }
+        }
+        else {
+            return true
+        }
+    })
+
+    function getUnique(array){
+        var uniqueArray = [];
+        for(var value of array){
+            if(uniqueArray.indexOf(value) === -1){
+                uniqueArray.push(value);
+            }
+        }
+        return uniqueArray;
+    }
+    
+    token.data = getUnique(token.data)
+    if(token.data.indexOf(token.txt)!= -1){
+        console.log('');
+        token.target = token.data.indexOf(token.txt);
+    }
+    //  console.log(token.data.indexOf(token.txt));
+    //  console.log(token,'token');
+     this.setState({[key]:token});
+  }
+
   value_location = (str)=>{
-       
-    
-    
     let token = {...this.state.location}
        token.txt = str;
         this.setState({location:token},()=>{
+            
             rn.hide_popup("location");
+            this.remove_card_black("location");
+            
         });
   }
   ran_dom_str(key){
@@ -54,7 +91,8 @@ class LockStoryLine extends Component {
     let token = {...this.state.time}
     token.txt = str;
      this.setState({time:token},()=>{
-         console.log(this.state.time,'time');
+        //  console.log(this.state.time,'time');
+         this.remove_card_black("time");
         rn.hide_popup("time");
      });
   }
@@ -63,7 +101,8 @@ class LockStoryLine extends Component {
     let token = {...this.state.terms}
     token.txt = str;
      this.setState({terms:token},()=>{
-         console.log(this.state.terms,'terms');
+        //  console.log(this.state.terms,'terms');
+        this.remove_card_black("terms");
         rn.hide_popup("terms");
      });
   }
@@ -72,7 +111,8 @@ class LockStoryLine extends Component {
     let token = {...this.state.have}
     token.txt = str;
     this.setState({have:token},()=>{
-         console.log(this.state.have,'have');
+        //  console.log(this.state.have,'have');
+        this.remove_card_black("have");
         rn.hide_popup("have");
     });
   }
@@ -81,7 +121,8 @@ class LockStoryLine extends Component {
     let token = {...this.state.he_was}
     token.txt = str;
     this.setState({he_was:token},()=>{
-         console.log(this.state.he_was,'he_was');
+        //  console.log(this.state.he_was,'he_was');
+        this.remove_card_black("he_was");
         rn.hide_popup("he_was");
     });
   }
@@ -91,7 +132,8 @@ class LockStoryLine extends Component {
     let token = {...this.state.but}
     token.txt = str;
     this.setState({but:token},()=>{
-         console.log(this.state.but,'but');
+        //  console.log(this.state.but,'but');
+        this.remove_card_black("but");
         rn.hide_popup("but");
     });
   }
@@ -100,7 +142,8 @@ class LockStoryLine extends Component {
     let token = {...this.state.final}
     token.txt = str;
     this.setState({final:token},()=>{
-         console.log(this.state.final,'final');
+        //  console.log(this.state.final,'final');
+        this.remove_card_black("final");
         rn.hide_popup("final");
     });
   }
@@ -190,8 +233,14 @@ class LockStoryLine extends Component {
             <button onClick={()=> this.add_card("location")} style={{"minWidth":"130px"}} className=" font-weight-bold text-white btn bg-bow mr-auto"> 
             <span className="font-weight-bold font-20 ">+</span> เพิ่มการ์ด</button>
             <div className="d-inline">
-                <button onClick={()=> rn.hide_popup("location")} style={{"minWidth":"130px"}} className="font-weight-bold text-white btn share-top mr-2">ปิด</button>
-                <button onClick={()=> this.value_location(this.state.location.data[this.state.location.target]) } style={{"minWidth":"130px"}} className=" font-weight-bold text-white bg-blue btn ">ยืนยันรายการ  </button>
+                <button onClick={()=> {
+                    this.remove_card_black("location");
+                    rn.hide_popup("location");
+                }} style={{"minWidth":"130px"}}
+                 className="font-weight-bold text-white btn share-top mr-2">ปิด</button>
+                <button onClick={()=> this.value_location(this.state.location.data[this.state.location.target]) }
+                 style={{"minWidth":"130px"}} 
+                 className =" font-weight-bold text-white bg-blue btn ">  ยืนยันรายการ  </button>
             </div>
           </div>
         </Popup>
@@ -258,7 +307,11 @@ class LockStoryLine extends Component {
             <button onClick={()=> this.add_card("time")} style={{"minWidth":"130px"}} className=" font-weight-bold text-white btn bg-bow mr-auto"> 
             <span className="font-weight-bold font-20 ">+</span> เพิ่มการ์ด</button>
             <div className="d-inline">
-                <button onClick={()=> rn.hide_popup("time")} style={{"minWidth":"130px"}} className="font-weight-bold text-white btn share-top mr-2">ปิด</button>
+                <button onClick={()=> {
+                    this.remove_card_black("time");
+                    rn.hide_popup("time")
+                }
+                    } style={{"minWidth":"130px"}} className="font-weight-bold text-white btn share-top mr-2">ปิด</button>
                 <button onClick={()=> this.value_time(this.state.time.data[this.state.time.target]) } style={{"minWidth":"130px"}} className=" font-weight-bold text-white bg-blue btn ">ยืนยันรายการ  </button>
             </div>
           </div>
@@ -324,7 +377,10 @@ class LockStoryLine extends Component {
             <button onClick={()=> this.add_card("terms")} style={{"minWidth":"130px"}} className=" font-weight-bold text-white btn bg-bow mr-auto"> 
             <span className="font-weight-bold font-20 ">+</span> เพิ่มการ์ด</button>
             <div className="d-inline">
-                <button onClick={()=> rn.hide_popup("terms")} style={{"minWidth":"130px"}} className="font-weight-bold text-white btn share-top mr-2">ปิด</button>
+                <button onClick={()=>{
+                    this.remove_card_black("terms");
+                    rn.hide_popup("terms")
+                }} style={{"minWidth":"130px"}} className="font-weight-bold text-white btn share-top mr-2">ปิด</button>
                 <button onClick={()=> this.value_terms(this.state.terms.data[this.state.terms.target]) } style={{"minWidth":"130px"}} className=" font-weight-bold text-white bg-blue btn ">ยืนยันรายการ  </button>
             </div>
           </div>
@@ -391,7 +447,10 @@ class LockStoryLine extends Component {
             <button onClick={()=> this.add_card("have")} style={{"minWidth":"130px"}} className=" font-weight-bold text-white btn bg-bow mr-auto"> 
             <span className="font-weight-bold font-20 ">+</span> เพิ่มการ์ด</button>
             <div className="d-inline">
-                <button onClick={()=> rn.hide_popup("have")} style={{"minWidth":"130px"}} className="font-weight-bold text-white btn share-top mr-2">ปิด</button>
+                <button onClick={()=> {
+                    this.remove_card_black("have");
+                    rn.hide_popup("have")
+                } } style={{"minWidth":"130px"}} className="font-weight-bold text-white btn share-top mr-2">ปิด</button>
                 <button onClick={()=> this.value_have(this.state.have.data[this.state.have.target]) } style={{"minWidth":"130px"}} className=" font-weight-bold text-white bg-blue btn ">ยืนยันรายการ  </button>
             </div>
           </div>
@@ -458,7 +517,12 @@ class LockStoryLine extends Component {
             <button onClick={()=> this.add_card("he_was")} style={{"minWidth":"130px"}} className=" font-weight-bold text-white btn bg-bow mr-auto"> 
             <span className="font-weight-bold font-20 ">+</span> เพิ่มการ์ด</button>
             <div className="d-inline">
-                <button onClick={()=> rn.hide_popup("he_was")} style={{"minWidth":"130px"}} className="font-weight-bold text-white btn share-top mr-2">ปิด</button>
+                <button onClick={()=>
+                    {
+                        this.remove_card_black("he_was");
+                        rn.hide_popup("he_was")
+                    }
+                    } style={{"minWidth":"130px"}} className="font-weight-bold text-white btn share-top mr-2">ปิด</button>
                 <button onClick={()=> this.value_he_was(this.state.he_was.data[this.state.he_was.target]) } style={{"minWidth":"130px"}} className=" font-weight-bold text-white bg-blue btn ">ยืนยันรายการ  </button>
             </div>
           </div>
@@ -524,7 +588,11 @@ class LockStoryLine extends Component {
             <button onClick={()=> this.add_card("but")} style={{"minWidth":"130px"}} className=" font-weight-bold text-white btn bg-bow mr-auto"> 
             <span className="font-weight-bold font-20 ">+</span> เพิ่มการ์ด</button>
             <div className="d-inline">
-                <button onClick={()=> rn.hide_popup("but")} style={{"minWidth":"130px"}} className="font-weight-bold text-white btn share-top mr-2">ปิด</button>
+                <button onClick={()=>{
+                    this.remove_card_black("but");
+                    rn.hide_popup("but")
+                }
+                } style={{"minWidth":"130px"}} className="font-weight-bold text-white btn share-top mr-2">ปิด</button>
                 <button onClick={()=> this.value_but(this.state.but.data[this.state.but.target]) } style={{"minWidth":"130px"}} className=" font-weight-bold text-white bg-blue btn ">ยืนยันรายการ  </button>
             </div>
           </div>
@@ -591,7 +659,10 @@ class LockStoryLine extends Component {
             <button onClick={()=> this.add_card("final")} style={{"minWidth":"130px"}} className=" font-weight-bold text-white btn bg-bow mr-auto"> 
             <span className="font-weight-bold font-20 ">+</span> เพิ่มการ์ด</button>
             <div className="d-inline">
-                <button onClick={()=> rn.hide_popup("final")} style={{"minWidth":"130px"}} className="font-weight-bold text-white btn share-top mr-2">ปิด</button>
+                <button onClick={()=>{
+                    this.remove_card_black("final");
+                    rn.hide_popup("final")
+                }} style={{"minWidth":"130px"}} className="font-weight-bold text-white btn share-top mr-2">ปิด</button>
                 <button onClick={()=> this.value_final(this.state.final.data[this.state.final.target]) } style={{"minWidth":"130px"}} className=" font-weight-bold text-white bg-blue btn ">ยืนยันรายการ  </button>
             </div>
           </div>
@@ -603,17 +674,14 @@ class LockStoryLine extends Component {
             <div className="text-center">
                 <h3>คุณต้องการเปลี่ยนแปลง Theme ในระบบ ใช่หรือไม่</h3>
             </div>
-            
             <div className="mt-3 pl-3">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eaque aspernatur dicta eveniet obcaecati saepe distinctio nostrum, minus consequuntur natus, reprehenderit voluptate quas deserunt eum totam? Maiores quibusdam laboriosam perferendis.
             </div>
             <div className="mt-5 text-center">
                 <div className="circle-delete-premise mx-auto  "></div>
             </div>
-            <div className="mt-5 text-center"
-            >
+            <div className="mt-5 text-center">
                 <button onClick={()=>rn.hide_popup("confirm-story-line")} className="text-white   mw-150 btn share-top font-weight-bold font-18 mr-2">ย้อนกลับ</button>
-                
                 <Link to="/coverage">
                     <button  onClick={()=>{
                          document.getElementsByTagName("BODY")[0].style.overflow = "scroll"
