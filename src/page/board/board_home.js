@@ -1,14 +1,39 @@
 import React,{Component} from 'react';
 import { Route,Link,withRouter } from 'react-router-dom'
 import rn from '../../module-function/module-default'
+import CONS from '../../global-variable/'
 // import Popup from '../component/popup'
 import './board.css'
 class BoardHome extends Component {
   state = {
-      txt:""
+      txt:"",
+      store_project:[]
   };
 
-  
+  set_status_project = (status_value)=>{
+
+       if(rn.ckvalue(status_value)){
+        localStorage.setItem('status_project',status_value);
+       }
+       else {
+        localStorage.setItem('status_project','-1');
+       }    
+  }
+ 
+  load_project = ()=>{
+       rn.PostData(CONS.URL_BOARD+"/list",
+       {id:localStorage.getItem('id_member')},"POST",200,"",false,true).then((value)=>{
+         console.log(value,'value');
+          this.setState({store_project:value.data.data});
+       })
+  }
+
+
+   componentDidMount(){
+      this.load_project()
+   }
+
+
   render() {
     return (
       <React.Fragment> 
@@ -41,23 +66,38 @@ class BoardHome extends Component {
             <div className="card bg-card-board mb-5 border-0 ">
               <div className="card-body ">                
                 <div className="row mt-4">
-                    <div className="col">
-                        <div class="card card-project border-0 ">
-                            <div class="card-body">
-                                <div className="d-flex a-click ">
-                                    <span className=" color-header-board font-weight-bold mr-auto font-20">
-                                        โรงเรียนลูกผู้ชาย
-                                    </span>
-                                    <span>
-                                        <i  style={{"color":"#cbcbcb"}} class="fas fa-pen"></i>
-                                    </span>
+                    {
+                      this.state.store_project.map((content,index)=>{
+                        return (
+
+                          <Link to="/Coverage"  className ="col-md-4"  > 
+                            <div onClick={()=> localStorage.setItem('status_project',content.id_project)  }  className="">
+                                <div class="card card-project border-0 ">
+                                    <div class="card-body">
+                                        <div className="d-flex a-click ">
+                                            <span className=" color-header-board font-weight-bold mr-auto font-20">
+                                                {/* โรงเรียนลูกผู้ชาย */}
+                                                {
+                                                  content.name_project
+                                                }
+                                            </span>
+                                            <span>
+                                                <i  style={{"color":"#cbcbcb"}} class="fas fa-pen"></i>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div> 
-                    <div className="col">
+                          </Link>
+
+                        ) 
+                      })
+                    }
+
+
+                    <div className="col-md-4">
                         <Link to="/Coverage" replace >
-                          <div class="card card-project border-0">
+                          <div  onClick={()=>this.set_status_project() } class="card card-project border-0">
                               <div class="card-body a-click">
                                   <p className=" text-center mt-2 color-gray">
                                       <i class="fas fa-plus font-40"></i>

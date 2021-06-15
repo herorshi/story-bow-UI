@@ -1,0 +1,34 @@
+.bg_login{
+    width: 100%;
+    height: 100vh;
+    background: #aaaaaa;
+}
+
+
+.position_card{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%)
+}
+
+
+.card_login{
+    /* min-width: 400px; */
+    min-height: 500px;
+}
+
+.menu_top{
+    min-height: 50px;
+}
+
+.bg-button{
+    background: #7AA4F7;
+
+}
+
+.line_or{
+    width: 50%;
+    height: 2px;
+    background: black;
+}

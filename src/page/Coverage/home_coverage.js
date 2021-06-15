@@ -3,6 +3,7 @@ import { Route,Link,withRouter } from 'react-router-dom'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import Popup from '../component/popup'
 import rn from '../../module-function/module-default'
+import CONS from '../../global-variable/'
 import 'react-circular-progressbar/dist/styles.css';
 import './coverage.css'
 import '../../stylesheet.css'
@@ -15,6 +16,7 @@ class Coverage extends Component {
       value_title:"",
       lock_line:"",
       lock_line_value:"",
+      lock_story_line:"",
       genre:"",
       genre_value:"",
       checkbox:"",
@@ -25,12 +27,56 @@ class Coverage extends Component {
       data_checkbox:["1","2","3","4","5"],
       data_ck_select:[],
       data_genre:["1","2","3","4","5"],
-      data_ck_genre:[]
-
+      data_ck_genre:[],
+      theme_name:"",
+      checkbox:""
 };
-     value_title = (value)=>{
-          this.setState({title:value,value_title:""});
-          rn.hide_popup('title');
+
+    load_coverage = ()=>{
+        // setTimeout(() => {
+            if(localStorage.getItem('status_project')!="-1"){
+                rn.PostData(CONS.URL_PROJECT+"/list",{id:localStorage.getItem('status_project')},"POST",200,"",false,true).then((value)=>{
+                    console.log(value);
+                    function empty_check (value){
+                        if(rn.ckvalue(value))  return value 
+                        else return ""
+                    }
+
+                     this.setState({
+                         title:empty_check(value.data.data[0]['name_project']),
+                         value_title : empty_check(value.data.data[0]['name_project']),
+                         premise:empty_check(value.data.data[0]['premise_name']),
+                         genre:empty_check(value.data.data[0]['genre']),
+                         theme_name:empty_check(value.data.data[0]['theme_name']),
+                         lock_story_line:empty_check(value.data.data[0]['lock_story_line_name']),
+                         checkbox:empty_check(value.data.data[0]['check_box']),
+                         lock_line:empty_check(value.data.data[0]['lock_line'])
+
+                    });
+                })  
+            }
+        // }, 1000);
+    }
+
+    value_title = (value)=>{
+        let title_send = {
+            title:this.state.value_title,
+            status:localStorage.getItem('status_project'),
+            id_member:localStorage.getItem('id_member')
+        }
+          rn.PostData(CONS.URL_PROJECT+"/title",title_send,"POST",200,"",false,true).then((value_data)=>{
+            console.log(value_data.data.id_project,'value');
+            if(localStorage.getItem('status_project') == "-1" ){
+                console.log(value_data.data);
+                localStorage.setItem('status_project',value_data.data.id_project);
+            }
+            if(value_data.status == 200){
+                this.setState({title:value,value_title:""});
+                rn.hide_popup('title');
+            }
+          }).catch((err)=>{
+              console.log(err.message,'error');
+          })
     }
     value_lock_line = (value)=>{
         this.setState({lock_line:value,lock_line_value:""});
@@ -50,6 +96,10 @@ class Coverage extends Component {
           this.setState({premise:value,premise_value:""});
           rn.hide_popup("premise");
     }
+
+     componentDidMount(){
+        this.load_coverage();
+     }
 
 //   const value = 0.66;
   render() {

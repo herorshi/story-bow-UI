@@ -1,3 +1,9 @@
+
+*{
+    font-family: 'Kanit', sans-serif;
+    letter-spacing: 1.7px;
+}
+
 #header_blue{
     height: 50px;
     background: #2d8cd6;
@@ -77,8 +83,14 @@
 .card-project-long{
     min-height: 250px!important;
 }
+.font-8{
+    font-size:8px;
+}
 .font-10{
     font-size:10px;
+}
+.font-13{
+    font-size: 13px;
 }
 .font-18{
     font-size: 18px;
@@ -411,6 +423,10 @@
     border:  1px solid #2ea2ff!important;
 }
 
+.register input::placeholder{
+    font-size: 13px;
+}
+
 textarea::placeholder ,
 select::placeholder
 {
@@ -650,4 +666,10 @@ a:link
 }
 .z10001{
     z-index: 10;
+}
+.bg-active{
+    background: #0E52D7;
+}
+*:focus {
+    outline: none;
 }

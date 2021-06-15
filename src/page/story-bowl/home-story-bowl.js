@@ -45,7 +45,7 @@ class HomeStoryBowL extends Component {
         {status:false,txt:"",title:"Find The Way",number:"21",color:""},//20
         {status:true,txt:"ข้อมูลจาก:และเขาได้เรียนรู้ว่า",title:"Learn Lesson",number:"22",color:""},//21
         {status:false,txt:"",title:"Obstacle 2",number:"23",color:""},//22
-        {status:true,txt:"อมูลจาก:แต่",title:"Obstacle 1",number:"24",color:""},//23
+        {status:true,txt:"ข้อมูลจาก:แต่",title:"Obstacle 1",number:"24",color:""},//23
         {status:false,txt:"",title:"Turning Point",number:"25",color:""},//24
         {status:false,txt:"",title:"Bad Coming",number:"26",color:""}, //25
         {status:false,txt:"",title:"Stake Rise",number:"27",color:""}, //26
@@ -55,7 +55,6 @@ class HomeStoryBowL extends Component {
     return (
       <React.Fragment> 
         <HeaderPage/>
-
         <Popup id="new_card" > 
           <div></div>
           {
@@ -283,7 +282,7 @@ class HomeStoryBowL extends Component {
                 <button 
                 onClick={()=>{
                     let token = {...this.state.store};
-                    console.log(this.state.select_story,'this.state.select_story');
+                    // console.log(this.state.select_story,'this.state.select_story');
                     token[this.state.select_story].status = false    
                     this.setState({
                         story:  token  , 
@@ -632,16 +631,7 @@ class HomeStoryBowL extends Component {
                             <div className="mb-5">Stake Rise</div>
                             <CardBow myreact={this} store={this.state.store[26]}  />
                         </div>
-                            
-
-                        
                         {/* <div className=" font-25 color-og position-absolute Role">Role</div> */}
-                        
-
-                        
-                        
-                        
-
                     </div>
                     <img src={bow} alt="" />
                 </div>

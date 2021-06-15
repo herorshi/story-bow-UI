@@ -375,17 +375,12 @@ const ReuseNormal = {
         }) 
     });
   },
-
-
-
-
-
-
+  
   
   redirect(url) {
     window.location.href = url;
   },
-
+  
   
   PostData(url,data,status_url="post",code_success,redirecurl,status=false,auth=false,element_progress=null) {
     const mystorefn = this;  
@@ -395,11 +390,12 @@ const ReuseNormal = {
     return axios({
       url:url, 
       data:data,
-      method:status_url,
+      method:"POST",
       headers: {
         "Content-Type": "application/json",
         "Authorization": (auth ? CONS.AUTH_PREFIX + mystorefn.CheckToken("token") : '')
       },
+      withCredentials: true,
       onUploadProgress: (progressEvent) => {
         if(mystorefn.ckvalue(element_progress)){
           if(mystorefn.ckvalue(element_progress.line_progress)){
@@ -997,7 +993,15 @@ const ReuseNormal = {
     } catch (e) {
       
     } 
-
-  }
+  },
+   array_getUnique(array){
+    var uniqueArray = [];
+    for(var value of array){
+        if(uniqueArray.indexOf(value) === -1){
+            uniqueArray.push(value);
+        }
+    }
+    return uniqueArray;
+}
 }
 export default ReuseNormal;
